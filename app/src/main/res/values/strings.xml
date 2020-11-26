@@ -11,4 +11,6 @@
     <string name="client">Client</string>
     <string name="blog">Blog</string>
     <string name="more">More</string>
+    <string name="inbox">inbox</string>
+    <string name="notification">notification</string>
 </resources>

@@ -5,8 +5,13 @@ import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.e4_clinic.R
+import com.example.e4_clinic.databinding.FragmentHomeBinding
+import com.example.e4_clinic.databinding.FragmentLoginBinding
+import com.example.e4_clinic.ui.core.BaseFragment
+import com.example.e4_clinic.ui.core.BaseViewModel
 
-class HomeFragment : Fragment() {
+class HomeFragment :  BaseFragment<BaseViewModel, FragmentHomeBinding>(BaseViewModel::class.java) {
+    override fun getLayoutRes(): Int = R.layout.fragment_home
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,15 +21,20 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_home, container, false)
+    ): View {
+        setHasOptionsMenu(true)
+        return super.onCreateView(inflater, container, savedInstanceState)
     }
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.toolbar_menu, menu)
 
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+
+        }
         return super.onOptionsItemSelected(item)
     }
 }

@@ -23,7 +23,7 @@ class LoginFragment : BaseFragment<BaseViewModel, FragmentLoginBinding>(BaseView
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
+        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
