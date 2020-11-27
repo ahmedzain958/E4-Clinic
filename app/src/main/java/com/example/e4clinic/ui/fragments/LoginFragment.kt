@@ -1,4 +1,4 @@
-package com.example.e4_clinic.ui.fragments
+package com.example.e4clinic.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,10 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.findNavController
-import com.example.e4_clinic.R
-import com.example.e4_clinic.databinding.FragmentLoginBinding
-import com.example.e4_clinic.ui.core.BaseFragment
-import com.example.e4_clinic.ui.core.BaseViewModel
+import com.example.e4clinic.R
+import com.example.e4clinic.databinding.FragmentLoginBinding
+import com.example.e4clinic.ui.core.BaseFragment
+import com.example.e4clinic.ui.core.BaseViewModel
 
 
 class LoginFragment : BaseFragment<BaseViewModel, FragmentLoginBinding>(BaseViewModel::class.java) {

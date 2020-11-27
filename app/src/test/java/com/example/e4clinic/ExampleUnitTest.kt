@@ -1,4 +1,4 @@
-package com.example.e4_clinic
+package com.example.e4clinic
 
 import org.junit.Test
 

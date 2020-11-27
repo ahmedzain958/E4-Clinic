@@ -1,4 +1,4 @@
-package com.example.e4_clinic.ui.activities
+package com.example.e4clinic.ui.activities
 
 import android.os.Bundle
 import android.view.Menu
@@ -7,9 +7,10 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
-import com.example.e4_clinic.R
-import com.example.e4_clinic.ui.core.BaseViewModel
+import androidx.navigation.ui.NavigationUI
+import com.example.e4clinic.R
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.toolbar_layout.view.*
 
@@ -24,7 +25,8 @@ class HomeActivity : AppCompatActivity() {
         navHostFragment.findNavController()//to determine the only bottom nav drawer fragments
             .addOnDestinationChangedListener { controller, destination, arguments ->
                 when (destination.id) {
-                    R.id.homeFragment -> { toolbar.visibility = View.VISIBLE
+                    R.id.homeFragment -> {
+                        toolbar.visibility = View.VISIBLE
                         toolbar.tvToolbarTitle.text = getString(R.string.home)
                         bottomNavigationView.visibility = View.VISIBLE
                     }
@@ -49,6 +51,12 @@ class HomeActivity : AppCompatActivity() {
                     }
                 }
             }
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.navHostFragment) as NavHostFragment?
+        NavigationUI.setupWithNavController(
+            bottomNavigationView,
+            navHostFragment!!.navController
+        )
     }
 
 

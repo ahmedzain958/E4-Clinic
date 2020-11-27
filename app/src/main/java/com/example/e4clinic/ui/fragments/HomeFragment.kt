@@ -1,4 +1,4 @@
-package com.example.e4_clinic.ui.fragments
+package com.example.e4clinic.ui.fragments
 
 import android.graphics.Color
 import android.os.Bundle
@@ -6,10 +6,10 @@ import android.view.*
 import android.widget.TableLayout
 import android.widget.TableRow
 import android.widget.TextView
-import com.example.e4_clinic.R
-import com.example.e4_clinic.databinding.FragmentHomeBinding
-import com.example.e4_clinic.ui.core.BaseFragment
-import com.example.e4_clinic.ui.core.BaseViewModel
+import com.example.e4clinic.R
+import com.example.e4clinic.databinding.FragmentHomeBinding
+import com.example.e4clinic.ui.core.BaseFragment
+import com.example.e4clinic.ui.core.BaseViewModel
 
 
 class HomeFragment :  BaseFragment<BaseViewModel, FragmentHomeBinding>(BaseViewModel::class.java) {
@@ -25,6 +25,11 @@ class HomeFragment :  BaseFragment<BaseViewModel, FragmentHomeBinding>(BaseViewM
         savedInstanceState: Bundle?
     ): View {
         setHasOptionsMenu(true)
+       initHorizontalPercChart()
+        return super.onCreateView(inflater, container, savedInstanceState)
+    }
+
+    private fun initHorizontalPercChart() {
         val row = TableRow(requireContext())
         val params1: TableRow.LayoutParams = TableRow.LayoutParams(
             TableLayout.LayoutParams.MATCH_PARENT,
@@ -60,8 +65,8 @@ class HomeFragment :  BaseFragment<BaseViewModel, FragmentHomeBinding>(BaseViewM
         row.addView(tv)
         row.addView(tv2)
         row.addView(tv3)
-        return super.onCreateView(inflater, container, savedInstanceState)
     }
+
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.toolbar_menu, menu)

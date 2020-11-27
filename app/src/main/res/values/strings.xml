@@ -18,4 +18,9 @@
     <string name="clinics">Clinics</string>
     <string name="pharmacies">Pharmacies</string>
     <string name="total_call">Total Calls</string>
+    <string name="my_profile">My Profile</string>
+    <string name="reports">Reports</string>
+    <string name="schedule_history">Schedule History</string>
+    <string name="setting">Setting</string>
+    <string name="help"><![CDATA[Help & Support]]></string>
 </resources>

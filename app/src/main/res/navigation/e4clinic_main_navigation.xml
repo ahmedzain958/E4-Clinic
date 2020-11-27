@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.e4_clinic.ui.fragments.LoginFragment"
+        android:name="com.example.e4clinic.ui.fragments.LoginFragment"
         android:label="LoginFragment" >
         <action
             android:id="@+id/action_loginFragment_to_homeFragment"
@@ -15,22 +15,22 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.e4_clinic.ui.fragments.HomeFragment"
+        android:name="com.example.e4clinic.ui.fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/clientFragment"
-        android:name="com.example.e4_clinic.ui.fragments.ClientFragment"
+        android:name="com.example.e4clinic.ui.fragments.ClientFragment"
         android:label="fragment_client"
         tools:layout="@layout/fragment_client" />
     <fragment
         android:id="@+id/blogFragment"
-        android:name="com.example.e4_clinic.ui.fragments.BlogFragment"
+        android:name="com.example.e4clinic.ui.fragments.BlogFragment"
         android:label="fragment_blog"
         tools:layout="@layout/fragment_blog" />
     <fragment
         android:id="@+id/moreFragment"
-        android:name="com.example.e4_clinic.ui.fragments.MoreFragment"
+        android:name="com.example.e4clinic.ui.fragments.MoreFragment"
         android:label="fragment_more"
         tools:layout="@layout/fragment_more" />
 </navigation>

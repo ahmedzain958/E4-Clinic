@@ -1,4 +1,4 @@
-package com.example.e4_clinic
+package com.example.e4clinic
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

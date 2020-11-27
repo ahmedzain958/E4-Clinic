@@ -1,4 +1,4 @@
-package com.example.e4_clinic.ui.core
+package com.example.e4clinic.ui.core
 
 import androidx.lifecycle.ViewModel
 
