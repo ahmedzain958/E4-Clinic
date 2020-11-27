@@ -14,4 +14,8 @@
     <string name="inbox">inbox</string>
     <string name="notification">notification</string>
     <string name="welcome">Welcome,</string>
+    <string name="total_visits">Total Visits</string>
+    <string name="clinics">Clinics</string>
+    <string name="pharmacies">Pharmacies</string>
+    <string name="total_call">Total Calls</string>
 </resources>
