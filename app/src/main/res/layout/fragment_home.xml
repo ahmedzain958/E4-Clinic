@@ -295,12 +295,14 @@
                 android:layout_marginStart="@dimen/_8sdp"
                 android:background="@color/white">
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/img_clinics"
                     android:layout_width="@dimen/_20sdp"
                     android:layout_height="@dimen/_20sdp"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:background="@drawable/ic_clinic"
+                    android:src="@drawable/ic_clinic"
+                    app:civ_border_width="@dimen/_1sdp"
+                    app:civ_border_color="@color/colorDarkGrey"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -362,12 +364,14 @@
                 android:layout_marginStart="@dimen/_8sdp"
                 android:background="@color/white">
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/img_pharmacies"
                     android:layout_width="@dimen/_20sdp"
                     android:layout_height="@dimen/_20sdp"
+                    app:civ_border_width="@dimen/_1sdp"
+                    app:civ_border_color="@color/colorDarkGrey"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:background="@drawable/pharmacy_logo"
+                    android:src="@drawable/pharmacy_logo"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -428,12 +432,14 @@
                 android:layout_marginStart="@dimen/_8sdp"
                 android:background="@color/white">
 
-                <ImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/img_video_calls"
                     android:layout_width="@dimen/_20sdp"
                     android:layout_height="@dimen/_20sdp"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:background="@drawable/phone"
+                    app:civ_border_width="@dimen/_1sdp"
+                    app:civ_border_color="@color/colorDarkGrey"
+                    android:src="@drawable/phone"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -442,7 +448,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:text="@string/pharmacies"
+                    android:text="@string/video_call"
                     android:textColor="@color/colorDarkGrey"
                     app:layout_constraintBottom_toBottomOf="@+id/img_video_calls"
                     app:layout_constraintStart_toEndOf="@id/img_video_calls"
