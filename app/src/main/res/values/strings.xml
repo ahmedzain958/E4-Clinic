@@ -13,4 +13,5 @@
     <string name="more">More</string>
     <string name="inbox">inbox</string>
     <string name="notification">notification</string>
+    <string name="welcome">Welcome,</string>
 </resources>
