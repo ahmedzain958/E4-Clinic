@@ -6,27 +6,30 @@ import android.view.*
 import android.widget.TableLayout
 import android.widget.TableRow
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import com.example.e4clinic.R
 import com.example.e4clinic.databinding.FragmentHomeBinding
+import com.example.e4clinic.ui.activities.HomeActivity
 import com.example.e4clinic.ui.core.BaseFragment
 import com.example.e4clinic.ui.core.BaseViewModel
 
 
-class HomeFragment :  BaseFragment<BaseViewModel, FragmentHomeBinding>(BaseViewModel::class.java) {
+class HomeFragment : BaseFragment<BaseViewModel, FragmentHomeBinding>(BaseViewModel::class.java) {
     override fun getLayoutRes(): Int = R.layout.fragment_home
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        setHasOptionsMenu(true)
-       initHorizontalPercChart()
+        initToolBar()
+        initHorizontalPercChart()
         return super.onCreateView(inflater, container, savedInstanceState)
+    }
+
+    private fun initToolBar() {
+
+
     }
 
     private fun initHorizontalPercChart() {
@@ -37,7 +40,7 @@ class HomeFragment :  BaseFragment<BaseViewModel, FragmentHomeBinding>(BaseViewM
             10f
         )
         row.layoutParams = params1
-        row.setPadding( 50, 10, 50, 10) // row.setBackgroundColor(Color.parseColor("#22000000"));
+        row.setPadding(50, 10, 50, 10) // row.setBackgroundColor(Color.parseColor("#22000000"));
 
 
         val tv = TextView(requireContext())
@@ -74,7 +77,7 @@ class HomeFragment :  BaseFragment<BaseViewModel, FragmentHomeBinding>(BaseViewM
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when(item.itemId) {
+        when (item.itemId) {
 
         }
         return super.onOptionsItemSelected(item)
