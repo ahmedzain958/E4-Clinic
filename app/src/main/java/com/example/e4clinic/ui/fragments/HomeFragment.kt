@@ -26,6 +26,9 @@ class HomeFragment : BaseFragment<BaseViewModel, FragmentHomeBinding>(BaseViewMo
         mBinding.calenderWeek.setOnDateClickListener { dateTime: DateTime ->
             mBinding.txtMonthYear.text = getCurrentMonthYear(dateTime)
         }
+        mBinding.cardviewClinics.setOnClickListener {
+
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
