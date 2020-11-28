@@ -2,6 +2,7 @@ package com.example.e4clinic.ui.fragments
 
 import android.os.Bundle
 import android.view.*
+import androidx.navigation.fragment.findNavController
 import com.example.e4clinic.R
 import com.example.e4clinic.databinding.FragmentHomeBinding
 import com.example.e4clinic.other.E4ClinicUtility.getCurrentMonthYear
@@ -17,7 +18,7 @@ class HomeFragment : BaseFragment<BaseViewModel, FragmentHomeBinding>(BaseViewMo
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-       val view: View = super.onCreateView(inflater, container, savedInstanceState)
+        val view: View = super.onCreateView(inflater, container, savedInstanceState)
         initListeners()
         return view
     }
@@ -27,7 +28,7 @@ class HomeFragment : BaseFragment<BaseViewModel, FragmentHomeBinding>(BaseViewMo
             mBinding.txtMonthYear.text = getCurrentMonthYear(dateTime)
         }
         mBinding.cardviewClinics.setOnClickListener {
-
+            findNavController().navigate(R.id.action_homeFragment_to_clinicsFragment)
         }
     }
 

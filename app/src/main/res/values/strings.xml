@@ -24,4 +24,10 @@
     <string name="setting">Setting</string>
     <string name="help"><![CDATA[Help & Support]]></string>
     <string name="video_call">Video Call</string>
+    <string name="search_name_or_mobile">Search by Name or Mobile</string>
+    <string name="filter">Filter</string>
+    <string name="Doctor">Doctor</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="feedback">Feedback</string>
 </resources>
