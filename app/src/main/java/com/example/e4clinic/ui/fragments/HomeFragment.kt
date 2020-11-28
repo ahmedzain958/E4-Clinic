@@ -24,7 +24,13 @@ class HomeFragment : BaseFragment<BaseViewModel, FragmentHomeBinding>(BaseViewMo
     ): View {
         initToolBar()
         initHorizontalPercChart()
+
         return super.onCreateView(inflater, container, savedInstanceState)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        mBinding.txtMonthYear.text = ""
+        super.onViewCreated(view, savedInstanceState)
     }
 
     private fun initToolBar() {

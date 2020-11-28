@@ -112,7 +112,62 @@
             app:cardElevation="@dimen/_20sdp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardview_welcome"></androidx.cardview.widget.CardView>
+            app:layout_constraintTop_toBottomOf="@id/cardview_welcome">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_18sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_6sdp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraint_calender"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/txt_month_year"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/purple_200"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="August 2020" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:src="@drawable/ic_dropdown"
+                        app:layout_constraintBottom_toBottomOf="@id/txt_month_year"
+                        app:layout_constraintStart_toEndOf="@id/txt_month_year"
+                        app:layout_constraintTop_toTopOf="@id/txt_month_year" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <noman.weekcalendar.WeekCalendar
+                    android:id="@+id/calender_week"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@color/white"
+                    app:daysBackgroundColor="@color/white"
+                    app:daysTextColor="@color/colorMediumGrey"
+                    app:weekBackgroundColor="@color/white"
+                    app:weekTextColor="@color/purple_200"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraint_calender"
+                    app:numOfPages="1000"
+                    app:selectedBgColor="@color/purple_200"
+                    app:todaysDateBgColor="@color/purple_200"
+                    app:dayNameLength="threeLetters"
+                    app:weekTextSize="@dimen/_10sdp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
         <!--https://stackoverflow.com/a/40031095      could be used instead or use mpchart library-->
         <androidx.cardview.widget.CardView
             android:id="@+id/cardview_total_visits"
@@ -134,7 +189,10 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="@dimen/_10sdp">
+                android:layout_marginStart="@dimen/_18sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp">
 
                 <TextView
                     android:id="@+id/txt_total_visits"
@@ -301,8 +359,8 @@
                     android:layout_height="@dimen/_20sdp"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:src="@drawable/ic_clinic"
-                    app:civ_border_width="@dimen/_1sdp"
                     app:civ_border_color="@color/colorDarkGrey"
+                    app:civ_border_width="@dimen/_1sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -331,7 +389,7 @@
                     android:id="@+id/txt_clinics_visits"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
                     android:text="10"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -368,10 +426,10 @@
                     android:id="@+id/img_pharmacies"
                     android:layout_width="@dimen/_20sdp"
                     android:layout_height="@dimen/_20sdp"
-                    app:civ_border_width="@dimen/_1sdp"
-                    app:civ_border_color="@color/colorDarkGrey"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:src="@drawable/pharmacy_logo"
+                    app:civ_border_color="@color/colorDarkGrey"
+                    app:civ_border_width="@dimen/_1sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -400,7 +458,7 @@
                     android:id="@+id/txt_pharmacies_visits"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
                     android:text="10"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -409,6 +467,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
             android:id="@+id/cardview_video_calls"
             android:layout_width="0dp"
@@ -437,9 +496,9 @@
                     android:layout_width="@dimen/_20sdp"
                     android:layout_height="@dimen/_20sdp"
                     android:layout_marginStart="@dimen/_10sdp"
-                    app:civ_border_width="@dimen/_1sdp"
-                    app:civ_border_color="@color/colorDarkGrey"
                     android:src="@drawable/phone"
+                    app:civ_border_color="@color/colorDarkGrey"
+                    app:civ_border_width="@dimen/_1sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -468,7 +527,7 @@
                     android:id="@+id/txt_img_video_calls_visits"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
                     android:text="20"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
