@@ -6,7 +6,7 @@
     android:layout_height="@dimen/_100sdp"
     android:layout_marginTop="@dimen/_6sdp"
     android:layout_marginEnd="@dimen/_6sdp"
-    app:cardBackgroundColor="@color/purple_200"
+    app:cardBackgroundColor="@color/colorLightGreen"
     app:cardCornerRadius="@dimen/_8sdp"
     app:cardElevation="@dimen/_4sdp">
 
@@ -34,7 +34,7 @@
         </androidx.cardview.widget.CardView>
 
         <TextView
-            android:id="@+id/txt_doctor"
+            android:id="@+id/txt_pharmacy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_6sdp"
@@ -45,14 +45,14 @@
             app:layout_constraintTop_toTopOf="@id/cardview_circle" />
 
         <TextView
-            android:id="@+id/txt_doctor_name"
+            android:id="@+id/txt_pharmacy_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_6sdp"
             android:textSize="@dimen/_12sdp"
-            app:layout_constraintBottom_toBottomOf="@id/txt_doctor"
-            app:layout_constraintStart_toEndOf="@id/txt_doctor"
-            app:layout_constraintTop_toTopOf="@id/txt_doctor"
+            app:layout_constraintBottom_toBottomOf="@id/txt_pharmacy"
+            app:layout_constraintStart_toEndOf="@id/txt_pharmacy"
+            app:layout_constraintTop_toTopOf="@id/txt_pharmacy"
             tools:text="@string/Doctor" />
 
         <TextView
@@ -61,12 +61,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_6sdp"
             android:layout_marginEnd="@dimen/_16sdp"
-            android:textColor="@color/colorLightGreen"
+            android:textColor="@color/colorOrange"
             android:textSize="@dimen/_10sdp"
-            app:layout_constraintBottom_toBottomOf="@id/txt_doctor"
+            app:layout_constraintBottom_toBottomOf="@id/txt_pharmacy"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@id/txt_doctor"
-            tools:text="@string/confirm" />
+            app:layout_constraintTop_toTopOf="@id/txt_pharmacy"
+            tools:text="New" />
 
         <ImageView
             android:id="@+id/img_clock"
@@ -74,8 +74,8 @@
             android:layout_height="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_2sdp"
             android:background="@drawable/ic_clock"
-            app:layout_constraintStart_toStartOf="@+id/txt_doctor"
-            app:layout_constraintTop_toBottomOf="@id/txt_doctor" />
+            app:layout_constraintStart_toStartOf="@+id/txt_pharmacy"
+            app:layout_constraintTop_toBottomOf="@id/txt_pharmacy" />
 
         <TextView
             android:id="@+id/txt_visit_time"
@@ -93,7 +93,7 @@
             android:layout_height="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_2sdp"
             android:background="@drawable/ic_location"
-            app:layout_constraintStart_toStartOf="@+id/txt_doctor"
+            app:layout_constraintStart_toStartOf="@+id/txt_pharmacy"
             app:layout_constraintTop_toBottomOf="@id/img_clock" />
 
         <TextView

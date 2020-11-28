@@ -7,16 +7,16 @@
 
         <variable
             name="viewModel"
-            type="com.example.e4clinic.ui.viewmodel.PharmaciesViewModel" />
+            type="com.example.e4clinic.ui.viewmodel.VideoCallsViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.fragments.PharmaciesFragment">
+        tools:context=".ui.fragments.VideoCallsFragment">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardview_pharmacy"
+            android:id="@+id/cardview_videocalls"
             android:layout_width="0dp"
             android:layout_height="@dimen/_50sdp"
             android:layout_marginStart="@dimen/_8sdp"
@@ -24,7 +24,7 @@
             android:layout_marginBottom="@dimen/_16sdp"
             android:paddingStart="@dimen/_8sdp"
             android:paddingEnd="@dimen/_8sdp"
-            app:cardBackgroundColor="@color/colorLightGreen"
+            app:cardBackgroundColor="@color/colorLightMove"
             app:cardCornerRadius="@dimen/_8sdp"
             app:cardElevation="@dimen/_20sdp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -38,11 +38,11 @@
                 android:background="@color/white">
 
                 <ImageView
-                    android:id="@+id/img_pharmacy"
+                    android:id="@+id/img_videocalls"
                     android:layout_width="@dimen/_20sdp"
                     android:layout_height="@dimen/_20sdp"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:src="@drawable/pharmacy"
+                    android:src="@drawable/ic_phone"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -51,24 +51,24 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:text="@string/pharmacies"
+                    android:text="@string/video_call"
                     android:textColor="@color/colorDarkGrey"
-                    app:layout_constraintBottom_toBottomOf="@+id/img_pharmacy"
-                    app:layout_constraintStart_toEndOf="@id/img_pharmacy"
-                    app:layout_constraintTop_toTopOf="@+id/img_pharmacy" />
+                    app:layout_constraintBottom_toBottomOf="@+id/img_videocalls"
+                    app:layout_constraintStart_toEndOf="@id/img_videocalls"
+                    app:layout_constraintTop_toTopOf="@+id/img_videocalls" />
 
                 <TextView
-                    android:id="@+id/txt_pharmacies_total_visits"
+                    android:id="@+id/txt_total_videocalls"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/_4sdp"
-                    android:text="@string/total_visits"
+                    android:text="@string/total_video_calls"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@id/txt_pharmacies_visits"
+                    app:layout_constraintEnd_toStartOf="@id/txt_video_calls"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/txt_pharmacies_visits"
+                    android:id="@+id/txt_video_calls"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/_16sdp"
@@ -89,8 +89,8 @@
             android:layout_marginTop="@dimen/_6sdp"
             app:cardCornerRadius="@dimen/_8sdp"
             app:cardElevation="@dimen/_20sdp"
-            app:layout_constraintStart_toStartOf="@id/cardview_pharmacy"
-            app:layout_constraintTop_toBottomOf="@+id/cardview_pharmacy">
+            app:layout_constraintStart_toStartOf="@id/cardview_videocalls"
+            app:layout_constraintTop_toBottomOf="@+id/cardview_videocalls">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -129,7 +129,7 @@
             app:cardCornerRadius="@dimen/_8sdp"
             app:cardElevation="@dimen/_20sdp"
             app:layout_constraintBottom_toBottomOf="@id/cardview_search"
-            app:layout_constraintEnd_toEndOf="@id/cardview_pharmacy"
+            app:layout_constraintEnd_toEndOf="@id/cardview_videocalls"
             app:layout_constraintStart_toEndOf="@id/cardview_search"
             app:layout_constraintTop_toTopOf="@+id/cardview_search">
 
@@ -172,7 +172,7 @@
             android:paddingEnd="@dimen/_8sdp"
             app:cardCornerRadius="@dimen/_8sdp"
             app:cardElevation="@dimen/_20sdp"
-            app:layout_constraintEnd_toEndOf="@id/cardview_pharmacy"
+            app:layout_constraintEnd_toEndOf="@id/cardview_videocalls"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cardview_search">
 
@@ -232,13 +232,13 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_pharmacies"
+            android:id="@+id/recycler_videocalls"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="@dimen/_8sdp"
             android:layout_marginTop="@dimen/_4sdp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/cardview_pharmacy"
+            app:layout_constraintEnd_toEndOf="@id/cardview_videocalls"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cardview_calender" />
     </androidx.constraintlayout.widget.ConstraintLayout>

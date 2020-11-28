@@ -34,6 +34,12 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
         mBinding.cardviewClinics.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_clinicsFragment)
         }
+        mBinding.cardviewPharmacies.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_pharmaciesFragment)
+        }
+        mBinding.cardviewVideoCalls.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_videoCallsFragment)
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
