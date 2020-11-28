@@ -127,6 +127,7 @@
             android:layout_marginEnd="@dimen/_6sdp"
             android:layout_marginBottom="@dimen/_6sdp"
             app:cardBackgroundColor="@color/purple_200"
+            app:cardCornerRadius="@dimen/_6sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btn_cancel">
