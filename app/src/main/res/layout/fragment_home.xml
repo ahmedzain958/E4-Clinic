@@ -100,7 +100,7 @@
         <androidx.cardview.widget.CardView
             android:id="@+id/cardview_calender"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_80sdp"
+            android:layout_height="@dimen/_90sdp"
             android:layout_marginStart="@dimen/_16sdp"
             android:layout_marginTop="@dimen/_8sdp"
             android:layout_marginEnd="@dimen/_16sdp"
@@ -118,9 +118,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="@dimen/_18sdp"
-                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginEnd="@dimen/_16sdp"
-                android:layout_marginBottom="@dimen/_6sdp">
+                android:layout_marginBottom="@dimen/_10sdp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraint_calender"
