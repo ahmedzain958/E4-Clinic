@@ -8,15 +8,18 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.e4clinic.R
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_home.*
 import kotlinx.android.synthetic.main.toolbar_layout.*
 import kotlinx.android.synthetic.main.toolbar_layout.view.tvToolbarTitle
 
 
+@AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
     var count = 0
     var textInboxItemCount: TextView? = null
@@ -56,7 +59,9 @@ class HomeActivity : AppCompatActivity() {
                         toolbar.inflateMenu(R.menu.toolbar_menu)
                     }
                     else -> {
-                        supportActionBar?.hide()
+                        this.supportActionBar?.hide()
+                        toolbar.menu.clear()
+                        toolbar_layout.visibility = View.GONE
                         toolbar.visibility = View.GONE
                         bottomNavigationView.visibility = View.GONE
                     }

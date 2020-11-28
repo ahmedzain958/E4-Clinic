@@ -1,37 +1,35 @@
 package com.example.e4clinic.ui.fragments
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.example.e4clinic.BR
 import com.example.e4clinic.R
 import com.example.e4clinic.databinding.FragmentLoginBinding
 import com.example.e4clinic.ui.core.BaseFragment
-import com.example.e4clinic.ui.core.BaseViewModel
+import com.example.e4clinic.ui.viewmodel.LoginViewModel
 
 
-class LoginFragment : BaseFragment<BaseViewModel, FragmentLoginBinding>(BaseViewModel::class.java) {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-    override fun getLayoutRes(): Int = R.layout.fragment_login
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-
-        return super.onCreateView(inflater, container, savedInstanceState)
-    }
-
+class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding>() {
+    private lateinit var mBinding: FragmentLoginBinding
+    override fun getBindingVariable(): Int = BR.viewModel
+    override fun getLayoutId(): Int=
+        R.layout.fragment_login
+    private val mViewModel: LoginViewModel by viewModels()
+    override fun getViewModel(): LoginViewModel = mViewModel
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        mBinding = getViewDataBinding()
+        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
         mBinding.btnLogin.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
+    }
 }

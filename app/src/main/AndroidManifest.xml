@@ -9,6 +9,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:name=".BaseApplication"
         android:theme="@style/Theme.E4Clinic"
         tools:replace="android:theme,android:icon">
         <activity android:name=".ui.activities.HomeActivity">

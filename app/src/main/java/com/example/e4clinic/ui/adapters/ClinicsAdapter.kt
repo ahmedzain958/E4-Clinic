@@ -8,16 +8,14 @@ import com.example.e4clinic.R
 import com.example.e4clinic.models.Clinic
 import kotlinx.android.synthetic.main.clinic_visit_item.view.*
 
-class ClinicsAdapter(private val mClinics: List<Clinic>) :
-    RecyclerView.Adapter<ClinicsAdapter.ClinicsViewHolder>() {
-
+class ClinicsAdapter : RecyclerView.Adapter<ClinicsAdapter.ClinicsViewHolder>() {
+    private val mClinics = ArrayList<Clinic>()
 
     class ClinicsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(clinic: Clinic) {
             itemView.txt_doctor_name.text = clinic.doctorName
             itemView.txt_visit_time.text = clinic.visitTime
             itemView.txt_address.text = clinic.address
-            itemView.txt_status.text = clinic.status
             itemView.txt_status.text = clinic.status
         }
     }
@@ -35,4 +33,9 @@ class ClinicsAdapter(private val mClinics: List<Clinic>) :
 
 
     override fun getItemCount(): Int = mClinics.size
+    fun setItems(clinicsList: List<Clinic>) {
+        this.mClinics.clear()
+        this.mClinics.addAll(clinicsList)
+        notifyDataSetChanged()
+    }
 }

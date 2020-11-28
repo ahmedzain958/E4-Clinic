@@ -1,30 +1,17 @@
 package com.example.e4clinic.ui.fragments
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.example.e4clinic.R
-import com.example.e4clinic.databinding.FragmentHomeBinding
 import com.example.e4clinic.databinding.FragmentMoreBinding
 import com.example.e4clinic.ui.core.BaseFragment
 import com.example.e4clinic.ui.core.BaseViewModel
+import com.example.e4clinic.BR
 
-class MoreFragment : BaseFragment<BaseViewModel, FragmentMoreBinding>(BaseViewModel::class.java) {
-    override fun getLayoutRes(): Int = R.layout.fragment_more
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        // Inflate the layout for this fragment
-        return super.onCreateView(inflater, container, savedInstanceState)
-    }
-
-
+class MoreFragment : BaseFragment<BaseViewModel, FragmentMoreBinding>() {
+    private lateinit var mViewBinding: FragmentMoreBinding
+    override fun getBindingVariable(): Int = BR.viewModel
+    private val mViewModel: BaseViewModel by viewModels()
+    override fun getViewModel(): BaseViewModel = mViewModel
+    override fun getLayoutId(): Int=
+        R.layout.fragment_more
 }
