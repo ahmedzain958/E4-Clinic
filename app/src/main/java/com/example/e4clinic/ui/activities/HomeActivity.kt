@@ -8,15 +8,12 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.e4clinic.R
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_home.*
-import kotlinx.android.synthetic.main.toolbar_layout.*
-import kotlinx.android.synthetic.main.toolbar_layout.view.tvToolbarTitle
 
 
 @AndroidEntryPoint
@@ -27,43 +24,39 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+        val toolbar: Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
         navHostFragment.findNavController()//to determine the only bottom nav drawer fragments
             .addOnDestinationChangedListener { controller, destination, arguments ->
                 when (destination.id) {
                     R.id.homeFragment -> {
-                        toolbar.menu.clear()
-                        toolbar.visibility = View.VISIBLE
-                        toolbar.tvToolbarTitle.text = getString(R.string.home)
-                        bottomNavigationView.visibility = View.VISIBLE
-                        toolbar.inflateMenu(R.menu.toolbar_menu)
+                        setToolbarVisibility()
+                        tvToolbarTitle.text = getString(R.string.home)
                     }
                     R.id.clientFragment -> {
-                        toolbar.menu.clear()
-                        toolbar.visibility = View.VISIBLE
-                        toolbar.tvToolbarTitle.text = getString(R.string.client)
-                        bottomNavigationView.visibility = View.VISIBLE
-                        toolbar.inflateMenu(R.menu.toolbar_menu)
+                        setToolbarVisibility()
+                        tvToolbarTitle.text = getString(R.string.client)
                     }
                     R.id.blogFragment -> {
-                        toolbar.menu.clear()
-                        toolbar.visibility = View.VISIBLE
-                        toolbar.tvToolbarTitle.text = getString(R.string.blog)
-                        bottomNavigationView.visibility = View.VISIBLE
-                        toolbar.inflateMenu(R.menu.toolbar_menu)
+                        setToolbarVisibility()
+                        tvToolbarTitle.text = getString(R.string.blog)
                     }
                     R.id.moreFragment -> {
-                        toolbar.menu.clear()
-                        toolbar.visibility = View.VISIBLE
-                        toolbar.tvToolbarTitle.text = getString(R.string.more)
-                        bottomNavigationView.visibility = View.VISIBLE
-                        toolbar.inflateMenu(R.menu.toolbar_menu)
+                        setToolbarVisibility()
+                        tvToolbarTitle.text = getString(R.string.more)
                     }
-                    else -> {
-                        this.supportActionBar?.hide()
+                    R.id.loginFragment -> {
                         toolbar.menu.clear()
-                        toolbar_layout.visibility = View.GONE
                         toolbar.visibility = View.GONE
                         bottomNavigationView.visibility = View.GONE
+                    }
+                    else -> {
+                        setToolbarVisibility(false, false)
+                        tvToolbarTitle.text = getString(R.string.schedule)
+                        toolbar.setNavigationIcon(R.drawable.ic_baseline_arrow_back_24);
+                        toolbar.setNavigationOnClickListener {
+                            onBackPressed()
+                        }
                     }
                 }
             }
@@ -73,6 +66,27 @@ class HomeActivity : AppCompatActivity() {
             bottomNavigationView,
             navHostFragment!!.navController
         )
+    }
+
+    private fun setToolbarVisibility(
+        inflateMenu: Boolean = true,
+        displayBottomNav: Boolean = true
+    ) {
+        toolbar.visibility = View.VISIBLE
+        toolbar.menu.clear()
+        if (displayBottomNav) {
+            supportActionBar?.setDisplayHomeAsUpEnabled(false)
+            supportActionBar?.setDisplayShowHomeEnabled(false)
+            bottomNavigationView.visibility =
+                View.VISIBLE
+            img_icon.visibility = View.VISIBLE
+        } else {
+            supportActionBar?.setDisplayHomeAsUpEnabled(true)
+            supportActionBar?.setDisplayShowHomeEnabled(true)
+            bottomNavigationView.visibility = View.GONE
+            img_icon.visibility = View.GONE
+        }
+        if (inflateMenu) toolbar.inflateMenu(R.menu.toolbar_menu)
     }
 
 
@@ -102,8 +116,16 @@ class HomeActivity : AppCompatActivity() {
                 Toast.makeText(this, "Notification clicked", Toast.LENGTH_SHORT).show()
                 return true
             }
+            R.id.home -> {
+                onBackPressed()
+                return true
+            }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
     }
 
     private fun setupBadge() {

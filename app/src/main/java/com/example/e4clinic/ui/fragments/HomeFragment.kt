@@ -11,10 +11,7 @@ import com.example.e4clinic.R
 import com.example.e4clinic.databinding.FragmentHomeBinding
 import com.example.e4clinic.other.E4ClinicUtility.getCurrentMonthYear
 import com.example.e4clinic.ui.core.BaseFragment
-import com.example.e4clinic.ui.core.BaseViewModel
-import org.joda.time.DateTime
 import com.example.e4clinic.BR
-import com.example.e4clinic.ui.viewmodel.ClinicsViewModel
 import com.example.e4clinic.ui.viewmodel.HomeViewModel
 
 
@@ -28,9 +25,9 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
 
 
     private fun initListeners() {
-        mBinding.calenderWeek.setOnDateClickListener { dateTime: DateTime ->
+      /*  mBinding.calenderWeek.setOnDateClickListener { dateTime: DateTime ->
             mBinding.txtMonthYear.text = getCurrentMonthYear(dateTime)
-        }
+        }*/
         mBinding.cardviewClinics.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_clinicsFragment)
         }
@@ -43,10 +40,10 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         mBinding = getViewDataBinding()
         initListeners()
-        mBinding.txtMonthYear.text = getCurrentMonthYear()
-        super.onViewCreated(view, savedInstanceState)
+//        mBinding.txtMonthYear.text = getCurrentMonthYear()
     }
 
 

@@ -22,7 +22,6 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mBinding = getViewDataBinding()
-        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
         mBinding.btnLogin.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
         }
@@ -30,6 +29,5 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding>() {
 
     override fun onResume() {
         super.onResume()
-        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
     }
 }

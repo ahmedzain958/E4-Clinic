@@ -20,6 +20,7 @@
             android:layout_width="0dp"
             android:layout_height="@dimen/_50sdp"
             android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_4sdp"
             android:layout_marginEnd="@dimen/_8sdp"
             android:layout_marginBottom="@dimen/_16sdp"
             android:paddingStart="@dimen/_8sdp"
@@ -39,8 +40,8 @@
 
                 <ImageView
                     android:id="@+id/img_clinics"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
+                    android:layout_width="@dimen/_25sdp"
+                    android:layout_height="@dimen/_25sdp"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:src="@drawable/ic_clinic_blue"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -52,7 +53,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:text="@string/clinics"
-                    android:textColor="@color/colorDarkGrey"
+                    android:textColor="@color/purple_200"
                     app:layout_constraintBottom_toBottomOf="@+id/img_clinics"
                     app:layout_constraintStart_toEndOf="@id/img_clinics"
                     app:layout_constraintTop_toTopOf="@+id/img_clinics" />
@@ -63,6 +64,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/_4sdp"
                     android:text="@string/total_visits"
+                    android:textColor="@color/purple_200"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/txt_clinics_visits"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -72,6 +74,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/_16sdp"
+                    android:textColor="@color/purple_200"
                     android:text="10"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -172,7 +175,8 @@
             android:paddingEnd="@dimen/_8sdp"
             app:cardCornerRadius="@dimen/_8sdp"
             app:cardElevation="@dimen/_20sdp"
-            app:layout_constraintEnd_toEndOf="@id/cardview_clinics"
+            android:layout_marginEnd="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cardview_search">
 
@@ -210,13 +214,12 @@
                         app:layout_constraintTop_toTopOf="@id/txt_month_year" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <!--<noman.weekcalendar.WeekCalendar
-                    android:id="@+id/calender_week"
+               <!-- <noman.weekcalendar.WeekCalendar
+                    android:id="@+id/calender_week_clinic"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:background="@color/white"
                     app:dayNameLength="threeLetters"
-                    app:daysBackgroundColor="@color/white"
+                    app:daysBackgroundColor="@android:color/transparent"
                     app:daysTextColor="@color/colorMediumGrey"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -236,9 +239,10 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginTop="@dimen/_4sdp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/cardview_clinics"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/cardview_calender" />
     </androidx.constraintlayout.widget.ConstraintLayout>

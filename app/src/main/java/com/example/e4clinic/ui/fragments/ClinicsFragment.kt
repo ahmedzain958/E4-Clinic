@@ -1,8 +1,8 @@
 package com.example.e4clinic.ui.fragments
 
+import android.app.ActionBar
 import android.os.Bundle
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,7 +15,6 @@ import com.example.e4clinic.ui.adapters.ClinicsAdapter
 import com.example.e4clinic.ui.core.BaseFragment
 import com.example.e4clinic.ui.viewmodel.ClinicsViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import org.joda.time.DateTime
 
 @AndroidEntryPoint
 class ClinicsFragment :
@@ -30,17 +29,19 @@ class ClinicsFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
         mViewBinding = getViewDataBinding()
         setupRecyclerView()
         subscribeObservers()
         initListeners()
         mViewModel.getClinics()
         mViewBinding.txtMonthYear.text = E4ClinicUtility.getCurrentMonthYear()
+
     }
 
+
+
     private fun initListeners() {
-       /* mViewBinding.calenderWeek.setOnDateClickListener { dateTime: DateTime ->
+      /*  mViewBinding.calenderWeekClinic.setOnDateClickListener { dateTime: DateTime ->
             mViewBinding.txtMonthYear.text = E4ClinicUtility.getCurrentMonthYear(dateTime)
         }*/
     }
@@ -66,5 +67,9 @@ class ClinicsFragment :
 
     private fun populateRecyclerView(clinicsList: List<Clinic>) {
         if (!clinicsList.isNullOrEmpty()) adapter.setItems(clinicsList)
+    }
+
+    override fun onPause() {
+        super.onPause()
     }
 }

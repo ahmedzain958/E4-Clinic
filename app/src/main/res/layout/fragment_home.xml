@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.example.e4clinic.ui.viewmodel.HomeViewModel" />
@@ -19,6 +20,7 @@
             android:layout_width="0dp"
             android:layout_height="@dimen/_80sdp"
             android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_4sdp"
             android:layout_marginEnd="@dimen/_16sdp"
             android:layout_marginBottom="@dimen/_16sdp"
             android:foreground="?android:attr/selectableItemBackground"
@@ -37,8 +39,8 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cardview_circle"
-                    android:layout_width="@dimen/_50sdp"
-                    android:layout_height="@dimen/_50sdp"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
                     app:cardCornerRadius="@dimen/_50sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -55,33 +57,33 @@
                     android:id="@+id/txt_welcome"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_6sdp"
                     android:fontFamily="sans-serif-medium"
                     android:text="@string/welcome"
                     android:textColor="@color/purple_200"
-                    android:textSize="@dimen/_18sdp"
+                    android:textSize="@dimen/_20sdp"
                     app:layout_constraintStart_toEndOf="@+id/cardview_circle"
                     app:layout_constraintTop_toTopOf="@+id/cardview_circle" />
 
                 <TextView
-                    android:id="@+id/txt_usename"
+                    android:id="@+id/txt_username"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text=" Hossam Ali"
                     android:textColor="@color/colorDarkGrey"
-                    android:textSize="@dimen/_18sdp"
+                    android:textSize="@dimen/_16sdp"
                     app:layout_constraintBottom_toBottomOf="@id/txt_welcome"
                     app:layout_constraintStart_toEndOf="@+id/txt_welcome"
-                    app:layout_constraintTop_toTopOf="@+id/txt_welcome"
-                    tools:text=" Hossam Ali" />
+                    app:layout_constraintTop_toTopOf="@+id/txt_welcome" />
 
                 <TextView
                     android:id="@+id/txt_note"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_6sdp"
                     android:text="Have a nice day at work"
                     android:textColor="@color/colorDarkGrey"
-                    android:textSize="@dimen/_12sdp"
+                    android:textSize="@dimen/_10sdp"
                     app:layout_constraintStart_toEndOf="@+id/cardview_circle"
                     app:layout_constraintTop_toBottomOf="@+id/txt_welcome" />
 
@@ -89,11 +91,10 @@
                     android:id="@+id/txt_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_6sdp"
                     android:text="August11,2020"
                     android:textColor="@color/colorMediumGrey"
                     android:textSize="@dimen/_8sdp"
-                    app:layout_constraintBottom_toBottomOf="@id/cardview_circle"
                     app:layout_constraintStart_toEndOf="@+id/cardview_circle"
                     app:layout_constraintTop_toBottomOf="@+id/txt_note" />
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -154,11 +155,9 @@
                     android:id="@+id/calender_week"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:background="@color/white"
-                    app:daysBackgroundColor="@color/white"
+                    app:dayNameLength="threeLetters"
+                    app:daysBackgroundColor="@android:color/transparent"
                     app:daysTextColor="@color/colorMediumGrey"
-                    app:weekBackgroundColor="@color/white"
-                    app:weekTextColor="@color/purple_200"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -166,7 +165,8 @@
                     app:numOfPages="1000"
                     app:selectedBgColor="@color/purple_200"
                     app:todaysDateBgColor="@color/purple_200"
-                    app:dayNameLength="threeLetters"
+                    app:weekBackgroundColor="@color/white"
+                    app:weekTextColor="@color/purple_200"
                     app:weekTextSize="@dimen/_10sdp" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
@@ -383,6 +383,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/_4sdp"
                     android:text="@string/total_visits"
+                    android:textColor="@color/colorDarkGrey"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/txt_clinics_visits"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -393,6 +394,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/_16sdp"
                     android:text="10"
+                    android:textColor="@color/colorDarkGrey"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -452,6 +454,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/_4sdp"
                     android:text="@string/total_visits"
+                    android:textColor="@color/colorDarkGrey"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/txt_pharmacies_visits"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -462,6 +465,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/_16sdp"
                     android:text="10"
+                    android:textColor="@color/colorDarkGrey"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -521,6 +525,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/_4sdp"
                     android:text="@string/total_call"
+                    android:textColor="@color/colorDarkGrey"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@id/txt_img_video_calls_visits"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -531,6 +536,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/_16sdp"
                     android:text="20"
+                    android:textColor="@color/colorDarkGrey"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
