@@ -16,7 +16,7 @@ class PharmaciesAdapter : RecyclerView.Adapter<PharmaciesAdapter.PharmaciesViewH
 
     class PharmaciesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(pharmacy: Pharmacy) {
-            itemView.txt_pharmacy_name.text = pharmacy.pharmacyName
+            itemView.txt_pharmacy.text = pharmacy.pharmacyName
             itemView.txt_visit_time.text = pharmacy.visitTime
             itemView.txt_address.text = pharmacy.address
             itemView.txt_status.text = pharmacy.status

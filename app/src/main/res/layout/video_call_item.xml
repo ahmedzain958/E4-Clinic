@@ -20,24 +20,37 @@
             android:id="@+id/cardview_circle"
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
-            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_4sdp"
             android:layout_marginTop="@dimen/_8sdp"
             app:cardCornerRadius="@dimen/_50sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageView
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_person" />
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/img_doctor"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_person" />
+
+                <ImageView
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:background="@drawable/green_circle"
+                    app:layout_constraintBottom_toBottomOf="@id/img_doctor"
+                    app:layout_constraintEnd_toEndOf="@id/img_doctor" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 
         <TextView
             android:id="@+id/txt_doctor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_marginStart="@dimen/_4sdp"
             android:layout_marginTop="@dimen/_2sdp"
             android:text="@string/Doctor"
             android:textSize="@dimen/_12sdp"
@@ -48,7 +61,7 @@
             android:id="@+id/txt_doctor_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_6sdp"
+            android:layout_marginStart="@dimen/_4sdp"
             android:textSize="@dimen/_12sdp"
             app:layout_constraintBottom_toBottomOf="@id/txt_doctor"
             app:layout_constraintStart_toEndOf="@id/txt_doctor"
@@ -70,8 +83,8 @@
 
         <ImageView
             android:id="@+id/img_clock"
-            android:layout_width="@dimen/_10sdp"
-            android:layout_height="@dimen/_10sdp"
+            android:layout_width="@dimen/_8sdp"
+            android:layout_height="@dimen/_8sdp"
             android:layout_marginTop="@dimen/_2sdp"
             android:background="@drawable/ic_clock"
             app:layout_constraintStart_toStartOf="@+id/txt_doctor"
@@ -81,35 +94,17 @@
             android:id="@+id/txt_visit_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_4sdp"
             app:layout_constraintBottom_toBottomOf="@id/img_clock"
             app:layout_constraintStart_toEndOf="@id/img_clock"
             app:layout_constraintTop_toTopOf="@id/img_clock"
-            tools:text="09:30 PM - 10:00 PM" />
+            android:text="09:30 PM - 10:00 PM" />
 
-        <ImageView
-            android:id="@+id/img_location"
-            android:layout_width="@dimen/_10sdp"
-            android:layout_height="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_2sdp"
-            android:background="@drawable/ic_location"
-            app:layout_constraintStart_toStartOf="@+id/txt_doctor"
-            app:layout_constraintTop_toBottomOf="@id/img_clock" />
-
-        <TextView
-            android:id="@+id/txt_address"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_8sdp"
-            app:layout_constraintBottom_toBottomOf="@id/img_location"
-            app:layout_constraintStart_toEndOf="@id/img_location"
-            app:layout_constraintTop_toTopOf="@id/img_location"
-            tools:text="43 Nakhla moteey st , Nasr City" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_cancel"
             android:layout_width="@dimen/_50sdp"
-            android:layout_height="@dimen/_25sdp"
+            android:layout_height="@dimen/_22sdp"
             android:layout_marginEnd="@dimen/_8sdp"
             android:layout_marginBottom="@dimen/_6sdp"
             android:background="@drawable/rounder_bordered_button_bg"
@@ -130,6 +125,7 @@
             android:text="@string/start_video"
             android:textAllCaps="false"
             android:textSize="@dimen/_8sdp"
+            android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btn_cancel">
 

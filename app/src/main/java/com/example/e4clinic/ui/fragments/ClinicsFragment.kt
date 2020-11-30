@@ -69,7 +69,4 @@ class ClinicsFragment :
         if (!clinicsList.isNullOrEmpty()) adapter.setItems(clinicsList)
     }
 
-    override fun onPause() {
-        super.onPause()
-    }
 }

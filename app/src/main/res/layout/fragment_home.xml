@@ -155,9 +155,11 @@
                     android:id="@+id/calender_week"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    app:dayNameLength="threeLetters"
-                    app:daysBackgroundColor="@android:color/transparent"
+                    android:background="@color/white"
+                    app:daysBackgroundColor="@color/white"
                     app:daysTextColor="@color/colorMediumGrey"
+                    app:weekBackgroundColor="@color/white"
+                    app:weekTextColor="@color/purple_200"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -165,8 +167,7 @@
                     app:numOfPages="1000"
                     app:selectedBgColor="@color/purple_200"
                     app:todaysDateBgColor="@color/purple_200"
-                    app:weekBackgroundColor="@color/white"
-                    app:weekTextColor="@color/purple_200"
+                    app:dayNameLength="threeLetters"
                     app:weekTextSize="@dimen/_10sdp" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
@@ -355,18 +356,37 @@
                 android:layout_marginStart="@dimen/_8sdp"
                 android:background="@color/white">
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/img_clinics"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraint_clinics_visits"
                     android:layout_width="@dimen/_30sdp"
                     android:layout_height="@dimen/_30sdp"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:scaleType="center"
                     android:background="@drawable/circle_around_img"
-                    android:src="@drawable/ic_clinic"
-                    app:civ_border_color="@color/colorDarkGrey"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/img_clinics"
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:src="@drawable/ic_clinic"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <!--   <de.hdodenhof.circleimageview.CircleImageView
+                       android:id="@+id/img_clinics"
+                       android:layout_width="@dimen/_30sdp"
+                       android:layout_height="@dimen/_30sdp"
+                       android:layout_marginStart="@dimen/_10sdp"
+                       android:background="@drawable/circle_around_img"
+                       android:src="@drawable/ic_clinic"
+                       app:civ_border_color="@color/colorDarkGrey"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintTop_toTopOf="parent" />-->
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -374,9 +394,9 @@
                     android:layout_marginStart="@dimen/_10sdp"
                     android:text="@string/clinics"
                     android:textColor="@color/colorDarkGrey"
-                    app:layout_constraintBottom_toBottomOf="@+id/img_clinics"
-                    app:layout_constraintStart_toEndOf="@id/img_clinics"
-                    app:layout_constraintTop_toTopOf="@+id/img_clinics" />
+                    app:layout_constraintBottom_toBottomOf="@+id/constraint_clinics_visits"
+                    app:layout_constraintStart_toEndOf="@id/constraint_clinics_visits"
+                    app:layout_constraintTop_toTopOf="@+id/constraint_clinics_visits" />
 
                 <TextView
                     android:id="@+id/txt_clinics_total_visits"
@@ -427,18 +447,27 @@
                 android:layout_marginStart="@dimen/_8sdp"
                 android:background="@color/white">
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/img_pharmacies"
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraint_pharmacies_visits"
                     android:layout_width="@dimen/_30sdp"
                     android:layout_height="@dimen/_30sdp"
-                    android:scaleType="center"
-                    android:background="@drawable/circle_around_img"     android:layout_marginStart="@dimen/_10sdp"
-                    android:src="@drawable/pharmacy_logo"
-                    app:civ_border_color="@color/colorDarkGrey"
-                    app:civ_border_width="@dimen/_1sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:background="@drawable/circle_around_img"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/img_pharmacies"
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:src="@drawable/pharmacy_logo"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -446,9 +475,9 @@
                     android:layout_marginStart="@dimen/_10sdp"
                     android:text="@string/pharmacies"
                     android:textColor="@color/colorDarkGrey"
-                    app:layout_constraintBottom_toBottomOf="@+id/img_pharmacies"
-                    app:layout_constraintStart_toEndOf="@id/img_pharmacies"
-                    app:layout_constraintTop_toTopOf="@+id/img_pharmacies" />
+                    app:layout_constraintBottom_toBottomOf="@+id/constraint_pharmacies_visits"
+                    app:layout_constraintStart_toEndOf="@id/constraint_pharmacies_visits"
+                    app:layout_constraintTop_toTopOf="@+id/constraint_pharmacies_visits" />
 
                 <TextView
                     android:id="@+id/txt_pharmacies_total_visits"
@@ -499,18 +528,26 @@
                 android:layout_marginStart="@dimen/_8sdp"
                 android:background="@color/white">
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/img_video_calls"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraint_video_calls"
                     android:layout_width="@dimen/_30sdp"
                     android:layout_height="@dimen/_30sdp"
                     android:layout_marginStart="@dimen/_10sdp"
-                    android:src="@drawable/phone"
-                    android:scaleType="center"
-                    android:background="@drawable/circle_around_img"      app:civ_border_color="@color/colorDarkGrey"
-                    app:civ_border_width="@dimen/_1sdp"
+                    android:background="@drawable/circle_around_img"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/img_video_calls"
+                        android:layout_width="@dimen/_15sdp"
+                        android:layout_height="@dimen/_15sdp"
+                        android:src="@drawable/phone"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -518,9 +555,9 @@
                     android:layout_marginStart="@dimen/_10sdp"
                     android:text="@string/video_call"
                     android:textColor="@color/colorDarkGrey"
-                    app:layout_constraintBottom_toBottomOf="@+id/img_video_calls"
-                    app:layout_constraintStart_toEndOf="@id/img_video_calls"
-                    app:layout_constraintTop_toTopOf="@+id/img_video_calls" />
+                    app:layout_constraintBottom_toBottomOf="@+id/constraint_video_calls"
+                    app:layout_constraintStart_toEndOf="@id/constraint_video_calls"
+                    app:layout_constraintTop_toTopOf="@+id/constraint_video_calls" />
 
                 <TextView
                     android:id="@+id/txt_img_video_calls_total_visits"

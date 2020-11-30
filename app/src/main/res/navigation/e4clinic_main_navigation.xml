@@ -53,13 +53,10 @@
         android:name="com.example.e4clinic.ui.fragments.PharmaciesFragment"
         android:label="fragment_pharmacies"
         tools:layout="@layout/fragment_pharmacies" >
-        <action
-            android:id="@+id/action_pharmaciesFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/videoCallsFragment"
         android:name="com.example.e4clinic.ui.fragments.VideoCallsFragment"
         android:label="fragment_video_calls"
-        tools:layout="@layout/fragment_video_calls" />
+        tools:layout="@layout/fragment_videocalls" />
 </navigation>

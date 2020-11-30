@@ -15,7 +15,6 @@ class VideoCallsAdapter : RecyclerView.Adapter<VideoCallsAdapter.VideoCallsViewH
         fun bind(videoCall: VideoCall) {
             itemView.txt_doctor_name.text = videoCall.doctorName
             itemView.txt_visit_time.text = videoCall.visitTime
-            itemView.txt_address.text = videoCall.address
             itemView.txt_status.text = videoCall.status
         }
     }

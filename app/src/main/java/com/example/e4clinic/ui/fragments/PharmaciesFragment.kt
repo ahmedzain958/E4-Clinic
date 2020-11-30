@@ -29,7 +29,6 @@ class PharmaciesFragment :
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
         mViewBinding = getViewDataBinding()
         setupRecyclerView()
         subscribeObservers()

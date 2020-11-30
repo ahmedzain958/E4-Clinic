@@ -23,6 +23,7 @@ import com.example.e4clinic.ui.core.BaseFragment
 import com.example.e4clinic.BR
 import com.example.e4clinic.ui.viewmodel.HomeViewModel
 import com.squareup.picasso.Picasso
+import org.joda.time.DateTime
 
 
 class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
@@ -36,9 +37,9 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
 
 
     private fun initListeners() {
-        /*  mBinding.calenderWeek.setOnDateClickListener { dateTime: DateTime ->
+          mBinding.calenderWeek.setOnDateClickListener { dateTime: DateTime ->
               mBinding.txtMonthYear.text = getCurrentMonthYear(dateTime)
-          }*/
+          }
         mBinding.cardviewClinics.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_clinicsFragment)
         }
@@ -53,25 +54,16 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mBinding = getViewDataBinding()
-        initViews()
         initListeners()
-//        mBinding.txtMonthYear.text = getCurrentMonthYear()
+        mBinding.txtMonthYear.text = getCurrentMonthYear()
     }
 
-    private fun initViews() {
 
-      /*  Picasso.with(requireActivity())
-            .load(Image_url)
-            .placeholder(R.drawable.ic_perm_identity_white_24dp)
-            .resize(135,160)
-            .into(profileimage);*/
-    }
 
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.toolbar_menu, menu)
-
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
