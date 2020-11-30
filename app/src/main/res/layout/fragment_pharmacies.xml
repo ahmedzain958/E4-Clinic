@@ -52,7 +52,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:text="@string/pharmacies"
-                    android:textColor="@color/colorDarkGrey"
+                    android:textColor="@color/purple_200"
                     app:layout_constraintBottom_toBottomOf="@+id/img_pharmacy"
                     app:layout_constraintStart_toEndOf="@id/img_pharmacy"
                     app:layout_constraintTop_toTopOf="@+id/img_pharmacy" />

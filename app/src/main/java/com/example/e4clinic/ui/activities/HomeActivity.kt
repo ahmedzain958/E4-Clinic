@@ -74,15 +74,13 @@ class HomeActivity : AppCompatActivity() {
     ) {
         toolbar.visibility = View.VISIBLE
         toolbar.menu.clear()
+        supportActionBar?.setDisplayHomeAsUpEnabled(!displayBottomNav)
+        supportActionBar?.setDisplayShowHomeEnabled(!displayBottomNav)
         if (displayBottomNav) {
-            supportActionBar?.setDisplayHomeAsUpEnabled(false)
-            supportActionBar?.setDisplayShowHomeEnabled(false)
             bottomNavigationView.visibility =
                 View.VISIBLE
             img_icon.visibility = View.VISIBLE
         } else {
-            supportActionBar?.setDisplayHomeAsUpEnabled(true)
-            supportActionBar?.setDisplayShowHomeEnabled(true)
             bottomNavigationView.visibility = View.GONE
             img_icon.visibility = View.GONE
         }

@@ -357,12 +357,13 @@
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/img_clinics"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
                     android:layout_marginStart="@dimen/_10sdp"
+                    android:scaleType="center"
+                    android:background="@drawable/circle_around_img"
                     android:src="@drawable/ic_clinic"
                     app:civ_border_color="@color/colorDarkGrey"
-                    app:civ_border_width="@dimen/_1sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -428,9 +429,10 @@
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/img_pharmacies"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:scaleType="center"
+                    android:background="@drawable/circle_around_img"     android:layout_marginStart="@dimen/_10sdp"
                     android:src="@drawable/pharmacy_logo"
                     app:civ_border_color="@color/colorDarkGrey"
                     app:civ_border_width="@dimen/_1sdp"
@@ -499,11 +501,12 @@
 
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/img_video_calls"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:src="@drawable/phone"
-                    app:civ_border_color="@color/colorDarkGrey"
+                    android:scaleType="center"
+                    android:background="@drawable/circle_around_img"      app:civ_border_color="@color/colorDarkGrey"
                     app:civ_border_width="@dimen/_1sdp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

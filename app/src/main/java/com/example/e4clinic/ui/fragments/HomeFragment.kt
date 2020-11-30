@@ -1,6 +1,15 @@
 package com.example.e4clinic.ui.fragments
 
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
+import android.graphics.drawable.BitmapDrawable
+import android.icu.number.NumberFormatter.with
+import android.icu.number.NumberRangeFormatter.with
 import android.os.Bundle
+import android.provider.ContactsContract
+import android.util.DisplayMetrics
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
@@ -13,21 +22,23 @@ import com.example.e4clinic.other.E4ClinicUtility.getCurrentMonthYear
 import com.example.e4clinic.ui.core.BaseFragment
 import com.example.e4clinic.BR
 import com.example.e4clinic.ui.viewmodel.HomeViewModel
+import com.squareup.picasso.Picasso
 
 
 class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
     private lateinit var mBinding: FragmentHomeBinding
     override fun getBindingVariable(): Int = BR.viewModel
-    override fun getLayoutId(): Int=
+    override fun getLayoutId(): Int =
         R.layout.fragment_home
+
     private val mViewModel: HomeViewModel by viewModels()
     override fun getViewModel(): HomeViewModel = mViewModel
 
 
     private fun initListeners() {
-      /*  mBinding.calenderWeek.setOnDateClickListener { dateTime: DateTime ->
-            mBinding.txtMonthYear.text = getCurrentMonthYear(dateTime)
-        }*/
+        /*  mBinding.calenderWeek.setOnDateClickListener { dateTime: DateTime ->
+              mBinding.txtMonthYear.text = getCurrentMonthYear(dateTime)
+          }*/
         mBinding.cardviewClinics.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_clinicsFragment)
         }
@@ -42,8 +53,18 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mBinding = getViewDataBinding()
+        initViews()
         initListeners()
 //        mBinding.txtMonthYear.text = getCurrentMonthYear()
+    }
+
+    private fun initViews() {
+
+      /*  Picasso.with(requireActivity())
+            .load(Image_url)
+            .placeholder(R.drawable.ic_perm_identity_white_24dp)
+            .resize(135,160)
+            .into(profileimage);*/
     }
 
 
