@@ -14,4 +14,5 @@
     <color name="colorLightGreen">#1cd815</color>
     <color name="colorLightMove">#c089ff</color>
     <color name="colorOrange">#ffbe43</color>
+    <color name="textColor">#6b6b6b</color>
 </resources>
