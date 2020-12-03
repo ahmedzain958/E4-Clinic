@@ -8,10 +8,18 @@ import com.example.e4clinic.R
 import com.example.e4clinic.models.Clinic
 import kotlinx.android.synthetic.main.clinic_visit_item.view.*
 
-class ClinicsAdapter : RecyclerView.Adapter<ClinicsAdapter.ClinicsViewHolder>() {
-    private val mClinics = ArrayList<Clinic>()
+class ClinicsAdapter(private val clinicsItemOnClickListener: ClinicsItemOnClickListener) :
+    RecyclerView.Adapter<ClinicsAdapter.ClinicsViewHolder>() {
+     val mClinics = ArrayList<Clinic>()
 
-    class ClinicsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    interface ClinicsItemOnClickListener {
+        fun onClickedClinic(clinic: Clinic)
+    }
+
+    class ClinicsViewHolder(itemView: View) :
+        RecyclerView.ViewHolder(itemView) {
+
+
         fun bind(clinic: Clinic) {
             itemView.txt_doctor_name.text = clinic.doctorName
             itemView.txt_visit_time.text = clinic.visitTime
@@ -20,16 +28,21 @@ class ClinicsAdapter : RecyclerView.Adapter<ClinicsAdapter.ClinicsViewHolder>() 
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClinicsViewHolder =
-        ClinicsViewHolder(
-            LayoutInflater.from(parent.context).inflate(
-                R.layout.clinic_visit_item, parent,
-                false
-            )
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClinicsViewHolder {
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.clinic_visit_item, parent, false)
+        return ClinicsViewHolder(
+            view
         )
+    }
 
-    override fun onBindViewHolder(holder: ClinicsViewHolder, position: Int) =
+    override fun onBindViewHolder(holder: ClinicsAdapter.ClinicsViewHolder, position: Int) {
         holder.bind(mClinics[position])
+        holder.itemView.setOnClickListener {
+            clinicsItemOnClickListener.onClickedClinic(mClinics[position])
+        }
+
+    }
 
 
     override fun getItemCount(): Int = mClinics.size

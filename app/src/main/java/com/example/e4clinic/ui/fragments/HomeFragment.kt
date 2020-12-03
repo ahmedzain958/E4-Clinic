@@ -14,6 +14,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.e4clinic.R
@@ -37,9 +38,9 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
 
 
     private fun initListeners() {
-          mBinding.calenderWeek.setOnDateClickListener { dateTime: DateTime ->
-              mBinding.txtMonthYear.text = getCurrentMonthYear(dateTime)
-          }
+        mBinding.calenderWeek.setOnDateClickListener { dateTime: DateTime ->
+            mBinding.txtMonthYear.text = getCurrentMonthYear(dateTime)
+        }
         mBinding.cardviewClinics.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_clinicsFragment)
         }
@@ -49,7 +50,17 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
         mBinding.cardviewVideoCalls.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_videoCallsFragment)
         }
-    }
+
+      /*  mBinding.progressChart.progressColor =
+            ContextCompat.getColor(requireActivity(), R.color.purple_200)*/
+       /* mBinding.progressChart.secondaryProgressColors = intArrayOf(R.color.purple_200,R.color.colorLightMove,R.color.colorLightGreen)
+
+        mBinding.progressChart.secondaryProgressColor =
+            ContextCompat.getColor(requireActivity(), R.color.colorLightGreen)
+        mBinding.progressChart.max = 40f
+        mBinding.progressChart.progress = 10f
+        mBinding.progressChart.secondaryProgress = 20f*/
+        }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -57,8 +68,6 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
         initListeners()
         mBinding.txtMonthYear.text = getCurrentMonthYear()
     }
-
-
 
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
