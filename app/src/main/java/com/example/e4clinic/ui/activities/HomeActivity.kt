@@ -73,7 +73,7 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun setupSubViews(toolbar: Toolbar) {
-        setToolbarVisibility(false, false)
+        setToolbarVisibility(false)
         tvToolbarTitle.text = getString(R.string.schedule)
         toolbar.setNavigationIcon(R.drawable.ic_baseline_arrow_back_24);
         toolbar.setNavigationOnClickListener {
