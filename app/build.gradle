@@ -86,6 +86,9 @@ dependencies {
 
     implementation 'com.squareup.picasso:picasso:2.71828'
 
+    implementation 'com.akexorcist:round-corner-progress-bar:2.1.1'
+    implementation 'com.github.nikartm:image-support:1.0.5'
+
     implementation 'androidx.multidex:multidex:2.0.1'
 
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"

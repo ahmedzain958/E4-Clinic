@@ -3,7 +3,9 @@ package com.example.e4clinic.ui.fragments
 import android.app.ActionBar
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.e4clinic.BR
@@ -18,7 +20,8 @@ import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class ClinicsFragment :
-    BaseFragment<ClinicsViewModel, FragmentClinicsBinding>() {
+    BaseFragment<ClinicsViewModel, FragmentClinicsBinding>(),
+    ClinicsAdapter.ClinicsItemOnClickListener {
     private lateinit var adapter: ClinicsAdapter
     private val mViewModel: ClinicsViewModel by viewModels()
     override fun getViewModel(): ClinicsViewModel = mViewModel
@@ -39,17 +42,16 @@ class ClinicsFragment :
     }
 
 
-
     private fun initListeners() {
-      /*  mViewBinding.calenderWeekClinic.setOnDateClickListener { dateTime: DateTime ->
-            mViewBinding.txtMonthYear.text = E4ClinicUtility.getCurrentMonthYear(dateTime)
-        }*/
+        /*  mViewBinding.calenderWeekClinic.setOnDateClickListener { dateTime: DateTime ->
+              mViewBinding.txtMonthYear.text = E4ClinicUtility.getCurrentMonthYear(dateTime)
+          }*/
     }
 
 
     private fun setupRecyclerView() {
         mViewBinding.recyclerClinics.layoutManager = LinearLayoutManager(requireActivity())
-        adapter = ClinicsAdapter()
+        adapter = ClinicsAdapter(this)
         mViewBinding.recyclerClinics.addItemDecoration(
             DividerItemDecoration(
                 mViewBinding.recyclerClinics.context,
@@ -69,4 +71,8 @@ class ClinicsFragment :
         if (!clinicsList.isNullOrEmpty()) adapter.setItems(clinicsList)
     }
 
+    override fun onClickedClinic(clinic: Clinic) {
+        val action = ClinicsFragmentDirections.actionClinicsFragmentToClinicsDetailsFragment(clinic)
+        findNavController().navigate(action)
+    }
 }
