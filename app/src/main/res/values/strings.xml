@@ -36,4 +36,8 @@
     <string name="search_name">Search by Name</string>
     <string name="new_plan">New Plan</string>
     <string name="schedule_details">Schedule Details</string>
+    <string name="clinic">Clinic</string>
+    <string name="appointment_reason">Appointment Reason</string>
+    <string name="view_appointment_history">View History Appointment</string>
+    <string name="view">View</string>
 </resources>

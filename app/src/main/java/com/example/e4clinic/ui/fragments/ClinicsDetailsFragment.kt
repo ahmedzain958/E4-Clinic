@@ -23,7 +23,6 @@ class ClinicsDetailsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_clinics_details, container, false)
-        view.findViewById<TextView>(R.id.text).setText(args.clinicArgument.toString())
         return view
     }
 

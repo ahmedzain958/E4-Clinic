@@ -47,16 +47,20 @@ class HomeActivity : AppCompatActivity() {
                         group_notification.visibility = View.VISIBLE
                     }
                     R.id.loginFragment -> {
-                        toolbar.menu.clear()
                         toolbar.visibility = View.GONE
                         bottomNavigationView.visibility = View.GONE
                     }
                     R.id.clinicsFragment, R.id.pharmaciesFragment, R.id.videoCallsFragment -> {
-                        setupSubViews(toolbar)
+                        setToolbarVisibility(false)
+                        tvToolbarTitle.text = getString(R.string.schedule)
+                        toolbar.setOnClickListener {
+                            onBackPressed()
+                        }
+                        group_notification.visibility = View.INVISIBLE
                     }
                     else -> {
                         setToolbarVisibility(false)
-                        tvToolbarTitle.text = getString(R.string.schedule)
+                        tvToolbarTitle.text = getString(R.string.schedule_details)
                         toolbar.setOnClickListener {
                             onBackPressed()
                         }
@@ -70,15 +74,6 @@ class HomeActivity : AppCompatActivity() {
             bottomNavigationView,
             navHostFragment!!.navController
         )
-    }
-
-    private fun setupSubViews(toolbar: Toolbar) {
-        setToolbarVisibility(false)
-        tvToolbarTitle.text = getString(R.string.schedule)
-        toolbar.setNavigationIcon(R.drawable.ic_baseline_arrow_back_24);
-        toolbar.setNavigationOnClickListener {
-            onBackPressed()
-        }
     }
 
     private fun setToolbarVisibility(
