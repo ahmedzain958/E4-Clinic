@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.e4clinic.BR
@@ -71,6 +72,7 @@ class ClinicsFragment :
     }
 
     override fun onClickedClinic(clinic: Clinic) {
-        Toast.makeText(requireActivity(), clinic.toString(), Toast.LENGTH_SHORT).show()
+        val action = ClinicsFragmentDirections.actionClinicsFragmentToClinicsDetailsFragment(clinic)
+        findNavController().navigate(action)
     }
 }

@@ -26,8 +26,4 @@ class LoginFragment : BaseFragment<LoginViewModel, FragmentLoginBinding>() {
             findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
         }
     }
-
-    override fun onResume() {
-        super.onResume()
-    }
 }
