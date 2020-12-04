@@ -35,4 +35,5 @@
     <string name="schedule">Schedule</string>
     <string name="search_name">Search by Name</string>
     <string name="new_plan">New Plan</string>
+    <string name="schedule_details">Schedule Details</string>
 </resources>
