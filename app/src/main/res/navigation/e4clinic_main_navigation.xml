@@ -51,10 +51,13 @@
         <action
             android:id="@+id/action_clinicsFragment_to_clinicsDetailsFragment"
             app:destination="@id/clinicsDetailsFragment" />
-       <!-- <argument
-            android:name="clinic"
-            app:argType="com.example.e4clinic.models.Clinic"
-            android:defaultValue="@null" />-->
+        <action
+            android:id="@+id/action_clinicsFragment_to_addFeedbackFragment"
+            app:destination="@id/addFeedbackFragment" />
+        <!-- <argument
+             android:name="clinic"
+             app:argType="com.example.e4clinic.models.Clinic"
+             android:defaultValue="@null" />-->
     </fragment>
     <fragment
         android:id="@+id/pharmaciesFragment"
@@ -72,6 +75,16 @@
         android:name="com.example.e4clinic.ui.fragments.ClinicsDetailsFragment"
         android:label="fragment_clinics_details"
         tools:layout="@layout/fragment_clinics_details" >
+        <argument
+            android:name="clinic_argument"
+            app:argType="com.example.e4clinic.models.Clinic"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/addFeedbackFragment"
+        android:name="com.example.e4clinic.ui.fragments.AddFeedbackFragment"
+        android:label="AddFeedbackFragment" >
         <argument
             android:name="clinic_argument"
             app:argType="com.example.e4clinic.models.Clinic"

@@ -40,4 +40,10 @@
     <string name="appointment_reason">Appointment Reason</string>
     <string name="view_appointment_history">View History Appointment</string>
     <string name="view">View</string>
+    <string name="write_feedback">Write Feedback</string>
+    <string name="survey_form">Survey Form</string>
+    <string name="feedback1">Feedback1</string>
+    <string name="attachement_files">Attachement files</string>
+    <string name="upload_photo">Upload Photo</string>
+    <string name="add_feedback">Add Feedback</string>
 </resources>

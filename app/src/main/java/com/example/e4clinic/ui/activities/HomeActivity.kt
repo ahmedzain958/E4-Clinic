@@ -58,6 +58,14 @@ class HomeActivity : AppCompatActivity() {
                         }
                         group_notification.visibility = View.INVISIBLE
                     }
+                    R.id.addFeedbackFragment-> {
+                        setToolbarVisibility(false)
+                        tvToolbarTitle.text = getString(R.string.add_feedback)
+                        toolbar.setOnClickListener {
+                            onBackPressed()
+                        }
+                        group_notification.visibility = View.INVISIBLE
+                    }
                     else -> {
                         setToolbarVisibility(false)
                         tvToolbarTitle.text = getString(R.string.schedule_details)

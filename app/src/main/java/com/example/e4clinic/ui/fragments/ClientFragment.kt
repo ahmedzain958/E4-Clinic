@@ -42,7 +42,6 @@ class ClientFragment : BaseFragment<CientViewModel, FragmentClientBinding>() {
 
 
     private fun setupRecyclerView() {
-        mViewBinding.clientsRecyclerView
         adapter = ClientsAdapter()
         mViewBinding.clientsRecyclerView.addItemDecoration(
             DividerItemDecoration(

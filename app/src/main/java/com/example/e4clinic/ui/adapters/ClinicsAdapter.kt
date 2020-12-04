@@ -8,23 +8,30 @@ import com.example.e4clinic.R
 import com.example.e4clinic.models.Clinic
 import kotlinx.android.synthetic.main.clinic_visit_item.view.*
 
-class ClinicsAdapter(private val clinicsItemOnClickListener: ClinicsItemOnClickListener) :
+class ClinicsAdapter(private val clinicsItemOnClickListener: ClinicsItemOnClickListener,
+                     private val clinicsFeedbackOnClickListener: ClinicsFeedbackOnClickListener) :
     RecyclerView.Adapter<ClinicsAdapter.ClinicsViewHolder>() {
-     val mClinics = ArrayList<Clinic>()
+    val mClinics = ArrayList<Clinic>()
 
     interface ClinicsItemOnClickListener {
         fun onClickedClinic(clinic: Clinic)
     }
-
+    interface ClinicsFeedbackOnClickListener {
+        fun feedBack(clinic: Clinic)
+    }
     class ClinicsViewHolder(itemView: View) :
         RecyclerView.ViewHolder(itemView) {
-
+        val txtDoctorName = itemView.txt_doctor_name
+        val txtVisitTime = itemView.txt_visit_time
+        val txtAddress = itemView.txt_address
+        val txtStatus = itemView.txt_status
+        val cardviewFeedback = itemView.cardview_feedback
 
         fun bind(clinic: Clinic) {
-            itemView.txt_doctor_name.text = clinic.doctorName
-            itemView.txt_visit_time.text = clinic.visitTime
-            itemView.txt_address.text = clinic.address
-            itemView.txt_status.text = clinic.status
+            txtDoctorName.text = clinic.doctorName
+            txtVisitTime.text = clinic.visitTime
+            txtAddress.text = clinic.address
+            txtStatus.text = clinic.status
         }
     }
 
@@ -36,12 +43,14 @@ class ClinicsAdapter(private val clinicsItemOnClickListener: ClinicsItemOnClickL
         )
     }
 
-    override fun onBindViewHolder(holder: ClinicsAdapter.ClinicsViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ClinicsViewHolder, position: Int) {
         holder.bind(mClinics[position])
-        holder.itemView.setOnClickListener {
+        holder.txtDoctorName.setOnClickListener {
             clinicsItemOnClickListener.onClickedClinic(mClinics[position])
         }
-
+        holder.cardviewFeedback.setOnClickListener {
+            clinicsFeedbackOnClickListener.feedBack(mClinics[position])
+        }
     }
 
 

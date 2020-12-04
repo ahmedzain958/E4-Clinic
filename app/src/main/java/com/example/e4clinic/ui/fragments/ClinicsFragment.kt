@@ -21,7 +21,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class ClinicsFragment :
     BaseFragment<ClinicsViewModel, FragmentClinicsBinding>(),
-    ClinicsAdapter.ClinicsItemOnClickListener {
+    ClinicsAdapter.ClinicsItemOnClickListener, ClinicsAdapter.ClinicsFeedbackOnClickListener {
     private lateinit var adapter: ClinicsAdapter
     private val mViewModel: ClinicsViewModel by viewModels()
     override fun getViewModel(): ClinicsViewModel = mViewModel
@@ -51,7 +51,7 @@ class ClinicsFragment :
 
     private fun setupRecyclerView() {
         mViewBinding.recyclerClinics.layoutManager = LinearLayoutManager(requireActivity())
-        adapter = ClinicsAdapter(this)
+        adapter = ClinicsAdapter(this,this)
         mViewBinding.recyclerClinics.addItemDecoration(
             DividerItemDecoration(
                 mViewBinding.recyclerClinics.context,
@@ -73,6 +73,11 @@ class ClinicsFragment :
 
     override fun onClickedClinic(clinic: Clinic) {
         val action = ClinicsFragmentDirections.actionClinicsFragmentToClinicsDetailsFragment(clinic)
+        findNavController().navigate(action)
+    }
+
+    override fun feedBack(clinic: Clinic) {
+        val action = ClinicsFragmentDirections.actionClinicsFragmentToAddFeedbackFragment(clinic)
         findNavController().navigate(action)
     }
 }
