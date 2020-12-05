@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.e4clinic.ui.viewmodel.AddFeedbackViewModel" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_doctor_details"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:cardElevation="@dimen/_4sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/_4sdp">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardview_circle"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        app:cardCornerRadius="@dimen/_50sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/img_doctor"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_person"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/txt_doctor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:text="@string/Doctor"
+                        android:textColor="@color/purple_200"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintStart_toEndOf="@id/cardview_circle"
+                        app:layout_constraintTop_toTopOf="@id/cardview_circle" />
+
+                    <TextView
+                        android:id="@+id/txt_doctor_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:textColor="@color/purple_200"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintBottom_toBottomOf="@id/txt_doctor"
+                        app:layout_constraintStart_toEndOf="@id/txt_doctor"
+                        app:layout_constraintTop_toTopOf="@id/txt_doctor"
+                        tools:text="Ahmed Karim" />
+
+                    <TextView
+                        android:id="@+id/txt_speciality"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Consultant in Pediatric Dentistry..."
+                        android:textColor="@color/textColor"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintStart_toStartOf="@id/txt_doctor"
+                        app:layout_constraintTop_toBottomOf="@id/txt_doctor" />
+
+                    <TextView
+                        android:id="@+id/txt_job_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dentist Specialized in Pediatric Dentistry..."
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintStart_toStartOf="@id/txt_speciality"
+                        app:layout_constraintTop_toBottomOf="@id/txt_speciality" />
+
+                    <TextView
+                        android:id="@+id/txt_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ahmed Karim@gmail.com"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintStart_toStartOf="@id/txt_job_title"
+                        app:layout_constraintTop_toBottomOf="@id/txt_job_title" />
+
+                    <TextView
+                        android:id="@+id/txt_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="002-100 300 5689"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintStart_toStartOf="@id/txt_email"
+                        app:layout_constraintTop_toBottomOf="@id/txt_email" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_clinic_appointment"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_140sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:cardElevation="@dimen/_4sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_doctor_details">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/_4sdp">
+
+
+                    <ImageView
+                        android:id="@+id/img_clinic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:src="@drawable/ic_clinic_blue"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txt_Clinic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:text="@string/clinic"
+                        android:textColor="@color/purple_200"
+                        android:textSize="@dimen/_14sdp"
+                        app:layout_constraintBottom_toBottomOf="@id/img_clinic"
+                        app:layout_constraintStart_toEndOf="@id/img_clinic"
+                        app:layout_constraintTop_toTopOf="@id/img_clinic" />
+
+                    <TextView
+                        android:id="@+id/txt_your_appointment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:text="Your Appointment"
+                        android:textColor="@color/purple_200"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintStart_toStartOf="@id/img_clinic"
+                        app:layout_constraintTop_toBottomOf="@id/img_clinic" />
+
+                    <ImageView
+                        android:id="@+id/img_calender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:src="@drawable/ic_calender"
+                        android:text="@string/Doctor"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintStart_toStartOf="@id/img_clinic"
+                        app:layout_constraintTop_toBottomOf="@id/txt_your_appointment" />
+
+                    <TextView
+                        android:id="@+id/txt_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:text="Monday 11 Sep 2020"
+                        app:layout_constraintBottom_toBottomOf="@id/img_calender"
+                        app:layout_constraintStart_toEndOf="@id/img_calender"
+                        app:layout_constraintTop_toTopOf="@id/img_calender" />
+
+
+                    <ImageView
+                        android:id="@+id/img_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:src="@drawable/ic_clock"
+                        android:text="@string/Doctor"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintStart_toStartOf="@id/img_clinic"
+                        app:layout_constraintTop_toBottomOf="@id/img_calender" />
+
+                    <TextView
+                        android:id="@+id/txt_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        app:layout_constraintBottom_toBottomOf="@id/img_time"
+                        app:layout_constraintStart_toEndOf="@id/img_time"
+                        app:layout_constraintTop_toTopOf="@id/img_time"
+                        tools:text="09:30 PM - 10:00 PM" />
+
+
+                    <ImageView
+                        android:id="@+id/img_clinic_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:src="@drawable/ic_clock"
+                        android:text="@string/Doctor"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintStart_toStartOf="@id/img_clinic"
+                        app:layout_constraintTop_toBottomOf="@id/img_time" />
+
+                    <TextView
+                        android:id="@+id/txt_clinic_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:text="El-Shouroq (Nasr City)"
+                        android:textColor="@color/purple_200"
+                        app:layout_constraintBottom_toBottomOf="@id/img_clinic_name"
+                        app:layout_constraintStart_toEndOf="@id/img_clinic_name"
+                        app:layout_constraintTop_toTopOf="@id/img_clinic_name" />
+
+                    <TextView
+                        android:id="@+id/txt_clinic_city"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:text="(Nasr City)"
+                        app:layout_constraintBottom_toBottomOf="@id/txt_clinic_name"
+                        app:layout_constraintStart_toEndOf="@id/txt_clinic_name"
+                        app:layout_constraintTop_toTopOf="@id/txt_clinic_name" />
+
+
+                    <ImageView
+                        android:id="@+id/img_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:src="@drawable/ic_location"
+                        android:text="@string/Doctor"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintStart_toStartOf="@id/img_clinic"
+                        app:layout_constraintTop_toBottomOf="@id/img_clinic_name" />
+
+                    <TextView
+                        android:id="@+id/txt_location"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:text="43 Nakhla moteey st , triumph square ,
+infront of emam ali mosque Nasr City"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintStart_toEndOf="@id/img_location"
+                        app:layout_constraintTop_toTopOf="@id/img_location" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_write_feedback"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_110sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:cardElevation="@dimen/_4sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_clinic_appointment">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/_4sdp">
+
+                    <TextView
+                        android:id="@+id/txt_write_feedback"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:text="@string/write_feedback"
+                        android:textColor="@color/purple_200"
+                        android:textSize="@dimen/_14sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/edit_appointment_reason"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_65sdp"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:background="@drawable/rounder_bordered_edittext_bg"
+                        android:gravity="top|start"
+                        android:hint="@string/write_feedback"
+                        android:inputType="textMultiLine"
+                        android:padding="@dimen/_3sdp"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/txt_write_feedback"
+                        app:layout_constraintTop_toBottomOf="@id/txt_write_feedback" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_survey_form"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_130sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:cardElevation="@dimen/_4sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_write_feedback">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/_4sdp">
+
+                    <TextView
+                        android:id="@+id/txt_survey_form"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:text="@string/survey_form"
+                        android:textColor="@color/purple_200"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txt_feedback1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_4sdp"
+                        android:text="@string/feedback1"
+                        android:textColor="@color/purple_200"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintStart_toStartOf="@id/txt_survey_form"
+                        app:layout_constraintTop_toBottomOf="@id/txt_survey_form" />
+
+                    <EditText
+                        android:id="@+id/edit_feedback1"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_65sdp"
+                        android:layout_marginTop="@dimen/_6sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:background="@drawable/rounder_bordered_edittext_bg"
+                        android:gravity="top|start"
+                        android:hint="@string/feedback1"
+                        android:inputType="textMultiLine"
+                        android:padding="@dimen/_3sdp"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/txt_survey_form"
+                        app:layout_constraintTop_toBottomOf="@id/txt_feedback1" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_attachements"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_120sdp"
+                android:layout_marginTop="@dimen/_6sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:cardElevation="@dimen/_4sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_survey_form">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/_4sdp">
+
+                    <TextView
+                        android:id="@+id/txt_attachements"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:text="@string/attachement_files"
+                        android:textColor="@color/purple_200"
+                        android:textSize="@dimen/_14sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_25sdp"
+                        android:layout_marginEnd="@dimen/_8sdp"
+                        android:background="@drawable/btn_less_rounded_bg"
+                        android:paddingStart="@dimen/_10sdp"
+                        android:paddingEnd="@dimen/_10sdp"
+                        android:text="@string/upload_photo"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_attachements"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_65sdp"
+                        android:layout_margin="@dimen/_10sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txt_attachements" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

@@ -23,7 +23,8 @@ import com.example.e4clinic.ui.viewmodel.ScheduleHistoryViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ScheduleHistoryFragment : BaseFragment<ScheduleHistoryViewModel, FragmentScheduleHistoryBinding>() {
+class ScheduleHistoryFragment : BaseFragment<ScheduleHistoryViewModel, FragmentScheduleHistoryBinding>(),
+    ScheduleHistoryAdapter.FeedbackSummaryOnClickListener {
     private lateinit var mViewBinding: FragmentScheduleHistoryBinding
     override fun getBindingVariable(): Int = BR.viewModel
     private val mViewModel: ScheduleHistoryViewModel by viewModels()
@@ -50,7 +51,7 @@ class ScheduleHistoryFragment : BaseFragment<ScheduleHistoryViewModel, FragmentS
     }
     private fun setupRecyclerView() {
         mViewBinding.recyclerHistory.layoutManager = LinearLayoutManager(requireActivity())
-        adapter = ScheduleHistoryAdapter()
+        adapter = ScheduleHistoryAdapter(this)
         mViewBinding.recyclerHistory.addItemDecoration(
             DividerItemDecoration(
                 mViewBinding.recyclerHistory.context,
@@ -58,5 +59,9 @@ class ScheduleHistoryFragment : BaseFragment<ScheduleHistoryViewModel, FragmentS
             )
         )
         mViewBinding.recyclerHistory.adapter = adapter
+    }
+
+    override fun onClickedFeedback(any: Any) {
+        TODO("Not yet implemented")
     }
 }

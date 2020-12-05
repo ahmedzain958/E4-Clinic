@@ -9,6 +9,7 @@ import javax.inject.Inject
 
 class ScheduleHistoryRepository @Inject constructor() {
     fun getScheduleHistory(): LiveData<List<Any>> {
+        //todo cahnge statuses to enums to be displayed in schedule history list
         val clinicsList = arrayListOf(
             Clinic(
                 "Ahmed Karim",
