@@ -10,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.fragments.ClientFragment">
+        tools:context=".ui.fragments.client.ClientFragment">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardview_name_search"
@@ -114,6 +114,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/_25sdp"
             android:backgroundTint="@color/purple_200"
+            android:id="@+id/addNewClientFab"
             android:src="@drawable/ic_add"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent">

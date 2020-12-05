@@ -50,6 +50,14 @@ class HomeActivity : AppCompatActivity() {
                         toolbar.visibility = View.GONE
                         bottomNavigationView.visibility = View.GONE
                     }
+                    R.id.addClientFragment -> {
+                        setToolbarVisibility(false, false)
+                        tvToolbarTitle.text = getString(R.string.add_new_client)
+                        toolbar.setNavigationIcon(R.drawable.ic_baseline_arrow_back_24);
+                        toolbar.setNavigationOnClickListener {
+                            onBackPressed()
+                        }
+                    }
                     else -> {
                         setToolbarVisibility(false, false)
                         tvToolbarTitle.text = getString(R.string.schedule)

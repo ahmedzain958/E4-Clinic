@@ -8,7 +8,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="home">Home</string>
-    <string name="client">Client</string>
+    <string name="client">Client List</string>
     <string name="blog">Blog</string>
     <string name="more">More</string>
     <string name="inbox">inbox</string>
@@ -35,4 +35,8 @@
     <string name="schedule">Schedule</string>
     <string name="search_name">Search by Name</string>
     <string name="new_plan">New Plan</string>
+    <string name="add_new_client">Add New Client</string>
+    <string name="client_type">Client Type</string>
+    <string name="entity_client">Entity Client</string>
+    <string name="choose_client">Choose Client</string>
 </resources>
