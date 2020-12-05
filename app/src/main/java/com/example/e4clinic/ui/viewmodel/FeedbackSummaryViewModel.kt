@@ -7,5 +7,5 @@ import com.example.e4clinic.models.Clinic
 import com.example.e4clinic.repository.ClinicsRepository
 import com.example.e4clinic.ui.core.BaseViewModel
 
-class AddFeedbackViewModel : BaseViewModel() {
+class FeedbackSummaryViewModel : BaseViewModel() {
 }
