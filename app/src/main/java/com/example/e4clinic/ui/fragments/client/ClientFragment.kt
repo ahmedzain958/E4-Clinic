@@ -1,20 +1,16 @@
-package com.example.e4clinic.ui.fragments
+package com.example.e4clinic.ui.fragments.client
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.e4clinic.BR
 import com.example.e4clinic.R
 import com.example.e4clinic.databinding.FragmentClientBinding
-import com.example.e4clinic.databinding.FragmentHomeBinding
-import com.example.e4clinic.databinding.FragmentPharmaciesBinding
 import com.example.e4clinic.models.Client
-import com.example.e4clinic.models.Pharmacy
-import com.example.e4clinic.other.E4ClinicUtility
 import com.example.e4clinic.ui.adapters.ClientsAdapter
-import com.example.e4clinic.ui.adapters.PharmaciesAdapter
 import com.example.e4clinic.ui.core.BaseFragment
 import com.example.e4clinic.ui.viewmodel.CientViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -37,9 +33,16 @@ class ClientFragment : BaseFragment<CientViewModel, FragmentClientBinding>() {
         mViewBinding = getViewDataBinding()
         setupRecyclerView()
         subscribeObservers()
+        initListeners()
         mViewModel.getClients()
     }
 
+    private fun initListeners() {
+        mViewBinding.addNewClientFab.setOnClickListener {
+            findNavController().navigate(R.id.action_clientFragment_to_addClientFragment)
+        }
+
+    }
 
     private fun setupRecyclerView() {
         adapter = ClientsAdapter()

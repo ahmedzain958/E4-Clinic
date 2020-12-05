@@ -30,9 +30,13 @@
     </fragment>
     <fragment
         android:id="@+id/clientFragment"
-        android:name="com.example.e4clinic.ui.fragments.ClientFragment"
+        android:name="com.example.e4clinic.ui.fragments.client.ClientFragment"
         android:label="fragment_client"
-        tools:layout="@layout/fragment_client" />
+        tools:layout="@layout/fragment_client" >
+        <action
+            android:id="@+id/action_clientFragment_to_addClientFragment"
+            app:destination="@id/addClientFragment" />
+    </fragment>
     <fragment
         android:id="@+id/blogFragment"
         android:name="com.example.e4clinic.ui.fragments.BlogFragment"
@@ -99,4 +103,9 @@
         android:id="@+id/scheduleHistoryFragment"
         android:name="com.example.e4clinic.ui.fragments.ScheduleHistoryFragment"
         android:label="ScheduleHistoryFragment" />
+    <fragment
+        android:id="@+id/addClientFragment"
+        android:name="com.example.e4clinic.ui.fragments.client.AddClientFragment"
+        android:label="AddClientFragment"
+        tools:layout="@layout/fragment_add_client" />
 </navigation>
