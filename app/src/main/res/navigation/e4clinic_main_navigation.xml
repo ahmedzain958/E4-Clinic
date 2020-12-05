@@ -122,9 +122,7 @@
             android:defaultValue="@null"
             app:argType="com.example.e4clinic.models.Pharmacy"
             app:nullable="true" />
-
     </fragment>
-        android:label="ScheduleHistoryFragment" />
     <fragment
         android:id="@+id/addClientFragment"
         android:name="com.example.e4clinic.ui.fragments.client.AddClientFragment"
