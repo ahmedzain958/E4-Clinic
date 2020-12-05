@@ -75,7 +75,7 @@
             android:textStyle="normal"
             app:layout_constraintStart_toStartOf="@+id/txt_doctor"
             app:layout_constraintTop_toBottomOf="@id/txt_doctor"
-            tools:text="Female , 30 Years" />
+            android:text="Female , 30 Years" />
 
 
         <TextView

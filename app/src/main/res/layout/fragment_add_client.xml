@@ -21,11 +21,11 @@
                 android:id="@+id/cardview_client_details"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:foreground="?android:attr/selectableItemBackground"
                 app:cardCornerRadius="@dimen/_8sdp"
                 app:cardElevation="@dimen/_5sdp"
-                app:cardUseCompatPadding="true"
                 app:contentPadding="@dimen/_20sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -173,11 +173,11 @@
                 android:id="@+id/cardview_client_address"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="@dimen/_5sdp"
+                android:layout_marginHorizontal="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_8sdp"
                 android:foreground="?android:attr/selectableItemBackground"
                 app:cardCornerRadius="@dimen/_8sdp"
                 app:cardElevation="@dimen/_5sdp"
-                app:cardUseCompatPadding="true"
                 app:contentPadding="@dimen/_20sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -188,139 +188,85 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/header_label"
+                        android:id="@+id/header_label_details"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:lineSpacingExtra="5sp"
+                        android:text="@string/client_address_branches_addresses"
                         android:textColor="@color/purple_200"
                         android:textSize="15sp"
                         android:textStyle="normal"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:text="Client" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/txt_client_type"
+                        android:id="@+id/txt_branch_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_6sdp"
                         android:layout_marginTop="@dimen/_8sdp"
-                        android:text="@string/client_type"
+                        android:text="@string/branche_name"
                         android:textColor="@color/purple_200"
                         android:textSize="@dimen/_9sdp"
-                        app:layout_constraintStart_toStartOf="@id/header_label"
-                        app:layout_constraintTop_toBottomOf="@id/header_label" />
-
-                    <TextView
-                        android:id="@+id/txt_client_type_required"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_8sdp"
-                        android:layout_marginEnd="@dimen/_10sdp"
-                        android:layout_marginBottom="@dimen/_5sdp"
-                        android:text="*"
-                        android:textColor="@color/purple_200"
-                        android:textSize="@dimen/_7sdp"
-                        app:layout_constraintBottom_toBottomOf="@id/txt_client_type"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="@id/txt_client_type" />
+                        app:layout_constraintStart_toStartOf="@id/header_label_details"
+                        app:layout_constraintTop_toBottomOf="@id/header_label_details" />
 
                     <EditText
-                        android:id="@+id/clientTypeEditText"
+                        android:id="@+id/branchNameEditText"
                         android:layout_width="0dp"
                         android:layout_height="@dimen/_25sdp"
                         android:background="@drawable/edt_rounded_bg"
                         android:drawableEnd="@drawable/ic_dropdown"
                         android:gravity="center_vertical"
-                        android:hint="@string/client_type"
+                        android:hint="@string/branche_name"
                         android:paddingHorizontal="@dimen/_7sdp"
                         android:textColorHint="@color/colorMediumGrey"
                         android:textSize="@dimen/_8sdp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/txt_client_type" />
+                        app:layout_constraintTop_toBottomOf="@+id/txt_branch_name" />
 
-
-                    <TextView
-                        android:id="@+id/txt_entity_client"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_6sdp"
-                        android:layout_marginTop="@dimen/_8sdp"
-                        android:text="@string/entity_client"
-                        android:textColor="@color/purple_200"
-                        android:textSize="@dimen/_9sdp"
-                        app:layout_constraintStart_toStartOf="@id/header_label"
-                        app:layout_constraintTop_toBottomOf="@id/clientTypeEditText" />
-
-                    <TextView
-                        android:id="@+id/txt_entity_client_required"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_8sdp"
-                        android:layout_marginEnd="@dimen/_10sdp"
-                        android:layout_marginBottom="@dimen/_5sdp"
-                        android:text="*"
-                        android:textColor="@color/purple_200"
-                        android:textSize="@dimen/_7sdp"
-                        app:layout_constraintBottom_toBottomOf="@id/txt_entity_client"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="@id/txt_entity_client" />
-
-                    <EditText
-                        android:id="@+id/entityClientEditText"
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/_25sdp"
-                        android:background="@drawable/edt_rounded_bg"
-                        android:drawableEnd="@drawable/ic_dropdown"
-                        android:gravity="center_vertical"
-                        android:hint="@string/entity_client"
-                        android:paddingHorizontal="@dimen/_7sdp"
-                        android:textColorHint="@color/colorMediumGrey"
-                        android:textSize="@dimen/_8sdp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/txt_entity_client" />
-
-                    <TextView
-                        android:id="@+id/txt_choose_client"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_6sdp"
-                        android:layout_marginTop="@dimen/_8sdp"
-                        android:text="@string/choose_client"
-                        android:textColor="@color/purple_200"
-                        android:textSize="@dimen/_9sdp"
-                        app:layout_constraintStart_toStartOf="@id/header_label"
-                        app:layout_constraintTop_toBottomOf="@id/entityClientEditText" />
-
-                    <EditText
-                        android:id="@+id/chooseClientEditText"
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/_25sdp"
-                        android:background="@drawable/edt_rounded_bg"
-                        android:drawableEnd="@drawable/ic_dropdown"
-                        android:gravity="center_vertical"
-                        android:hint="@string/choose_client"
-                        android:paddingHorizontal="@dimen/_7sdp"
-                        android:textColorHint="@color/colorMediumGrey"
-                        android:textSize="@dimen/_8sdp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/txt_choose_client" />
 
                     <include
-                        layout="@layout/selected_doctor_card"
+                        android:id="@+id/branch1"
+                        layout="@layout/item_client_branch_adress_layout"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/_8sdp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/chooseClientEditText" />
+                        app:layout_constraintTop_toBottomOf="@id/branchNameEditText" />
+
+                    <include
+                        layout="@layout/item_client_branch_adress_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_3sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/branch1" />
+
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="@dimen/_130sdp"
+                android:layout_height="@dimen/_34sdp"
+                android:layout_marginTop="@dimen/_24sdp"
+                android:layout_marginBottom="@dimen/_35sdp"
+                android:background="@drawable/btn_rounded_bg"
+                android:gravity="center"
+                android:text="@string/save"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardview_client_address" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

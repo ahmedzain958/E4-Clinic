@@ -39,4 +39,7 @@
     <string name="client_type">Client Type</string>
     <string name="entity_client">Entity Client</string>
     <string name="choose_client">Choose Client</string>
+    <string name="client_address_branches_addresses">Client Address (Branches Addresses</string>
+    <string name="branche_name">Branche Name</string>
+    <string name="save">Save</string>
 </resources>
