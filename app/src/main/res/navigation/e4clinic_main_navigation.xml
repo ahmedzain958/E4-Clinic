@@ -65,16 +65,12 @@
         <action
             android:id="@+id/action_clinicsFragment_to_addFeedbackFragment"
             app:destination="@id/addFeedbackFragment" />
-        <!-- <argument
-             android:name="clinic"
-             app:argType="com.example.e4clinic.models.Clinic"
-             android:defaultValue="@null" />-->
     </fragment>
     <fragment
         android:id="@+id/pharmaciesFragment"
         android:name="com.example.e4clinic.ui.fragments.PharmaciesFragment"
         android:label="fragment_pharmacies"
-        tools:layout="@layout/fragment_pharmacies"/>
+        tools:layout="@layout/fragment_pharmacies" />
     <fragment
         android:id="@+id/videoCallsFragment"
         android:name="com.example.e4clinic.ui.fragments.VideoCallsFragment"
@@ -104,6 +100,30 @@
     <fragment
         android:id="@+id/scheduleHistoryFragment"
         android:name="com.example.e4clinic.ui.fragments.ScheduleHistoryFragment"
+        android:label="ScheduleHistoryFragment">
+        <action
+            android:id="@+id/action_scheduleHistoryFragment_to_feedbackSummaryFragmentWithClinic"
+            app:destination="@id/feedbackSummaryFragment" />
+        <action
+            android:id="@+id/action_scheduleHistoryFragment_to_feedbackSummaryFragmentWithPharmacy"
+            app:destination="@id/feedbackSummaryFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/feedbackSummaryFragment"
+        android:name="com.example.e4clinic.ui.fragments.FeedbackSummaryFragment"
+        android:label="FeedbackSummaryFragment">
+        <argument
+            android:name="clinic_argument"
+            android:defaultValue="@null"
+            app:argType="com.example.e4clinic.models.Clinic"
+            app:nullable="true" />
+        <argument
+            android:name="pharmacy_argument"
+            android:defaultValue="@null"
+            app:argType="com.example.e4clinic.models.Pharmacy"
+            app:nullable="true" />
+
+    </fragment>
         android:label="ScheduleHistoryFragment" />
     <fragment
         android:id="@+id/addClientFragment"
