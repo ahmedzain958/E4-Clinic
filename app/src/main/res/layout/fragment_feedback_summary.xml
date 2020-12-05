@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.e4clinic.ui.viewmodel.AddFeedbackViewModel" />
+            type="com.example.e4clinic.ui.viewmodel.FeedbackSummaryViewModel" />
 
     </data>
 

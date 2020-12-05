@@ -1,5 +1,6 @@
 package com.example.e4clinic.ui.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -43,7 +44,7 @@ class ScheduleHistoryAdapter(private val feedbackSummaryOnClickListener: Feedbac
     class PharmaciesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val btnCancel = itemView.btn_cancel
         val cardViewFeedback = itemView.cardview_feedback
-        val btnFeedbackSummary = itemView.btn_feedback_summary
+        val btnFeedbackSummary = itemView.btn_pharmacy_feedback_summary
         fun bind(pharmacy: Pharmacy) {
             itemView.txt_pharmacy.text = pharmacy.pharmacyName
             itemView.txt_visit_time.text = pharmacy.visitTime
@@ -61,13 +62,16 @@ class ScheduleHistoryAdapter(private val feedbackSummaryOnClickListener: Feedbac
         val txtVisitTime = itemView.txt_visit_time
         val txtAddress = itemView.txt_address
         val txtStatus = itemView.txt_status
-        val cardviewFeedback = itemView.cardview_feedback
+        val cardViewFeedback = itemView.cardview_feedback
+        val btnFeedbackSummary = itemView.btn_clinic_feedback_summary
 
         fun bind(clinic: Clinic) {
             txtDoctorName.text = clinic.doctorName
             txtVisitTime.text = clinic.visitTime
             txtAddress.text = clinic.address
             txtStatus.text = clinic.status
+            cardViewFeedback.visibility = View.GONE
+            btnFeedbackSummary.visibility = View.VISIBLE
         }
     }
 
@@ -112,10 +116,14 @@ class ScheduleHistoryAdapter(private val feedbackSummaryOnClickListener: Feedbac
 
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        if (mScheduleHistoryList[position] is Clinic) {
+        if (getItemViewType(position) == CLINIC_TYPE) {
             val clinic = mScheduleHistoryList[position] as Clinic
-            return (holder as ClinicsViewHolder).bind(clinic)
-        } else if (mScheduleHistoryList[position] is Pharmacy) {
+            val clinicViewHolder = holder as ClinicsViewHolder
+            clinicViewHolder.btnFeedbackSummary.setOnClickListener {
+                feedbackSummaryOnClickListener.onClickedFeedback(clinic)
+            }
+            return clinicViewHolder.bind(clinic)
+        } else if (getItemViewType(position) == PHARMACY_TYPE) {
             val pharmacy = mScheduleHistoryList[position] as Pharmacy
             val pharmaciesViewHolder = holder as PharmaciesViewHolder
             pharmaciesViewHolder.btnFeedbackSummary.setOnClickListener {

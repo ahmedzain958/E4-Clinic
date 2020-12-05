@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.e4clinic.BR
@@ -13,6 +14,8 @@ import com.example.e4clinic.R
 import com.example.e4clinic.databinding.FragmentMoreBinding
 import com.example.e4clinic.databinding.FragmentScheduleHistoryBinding
 import com.example.e4clinic.models.Client
+import com.example.e4clinic.models.Clinic
+import com.example.e4clinic.models.Pharmacy
 import com.example.e4clinic.other.E4ClinicUtility
 import com.example.e4clinic.ui.adapters.ClientsAdapter
 import com.example.e4clinic.ui.adapters.ClinicsAdapter
@@ -23,7 +26,8 @@ import com.example.e4clinic.ui.viewmodel.ScheduleHistoryViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ScheduleHistoryFragment : BaseFragment<ScheduleHistoryViewModel, FragmentScheduleHistoryBinding>(),
+class ScheduleHistoryFragment :
+    BaseFragment<ScheduleHistoryViewModel, FragmentScheduleHistoryBinding>(),
     ScheduleHistoryAdapter.FeedbackSummaryOnClickListener {
     private lateinit var mViewBinding: FragmentScheduleHistoryBinding
     override fun getBindingVariable(): Int = BR.viewModel
@@ -31,6 +35,7 @@ class ScheduleHistoryFragment : BaseFragment<ScheduleHistoryViewModel, FragmentS
     override fun getViewModel(): ScheduleHistoryViewModel = mViewModel
     override fun getLayoutId(): Int =
         R.layout.fragment_schedule_history
+
     private lateinit var adapter: ScheduleHistoryAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -41,14 +46,17 @@ class ScheduleHistoryFragment : BaseFragment<ScheduleHistoryViewModel, FragmentS
         mViewModel.getHistory()
         mViewBinding.txtMonthYear.text = E4ClinicUtility.getCurrentMonthYear()
     }
+
     private fun subscribeObservers() {
         mViewModel.history.observe(viewLifecycleOwner, { history: List<Any> ->
             populateRecyclerView(history)
         })
     }
+
     private fun populateRecyclerView(history: List<Any>) {
         if (!history.isNullOrEmpty()) adapter.setItems(history)
     }
+
     private fun setupRecyclerView() {
         mViewBinding.recyclerHistory.layoutManager = LinearLayoutManager(requireActivity())
         adapter = ScheduleHistoryAdapter(this)
@@ -62,6 +70,15 @@ class ScheduleHistoryFragment : BaseFragment<ScheduleHistoryViewModel, FragmentS
     }
 
     override fun onClickedFeedback(any: Any) {
-        TODO("Not yet implemented")
+
+        val action = if (any is Clinic)
+            ScheduleHistoryFragmentDirections.actionScheduleHistoryFragmentToFeedbackSummaryFragmentWithClinic(
+                any as Clinic
+            )
+        else
+            ScheduleHistoryFragmentDirections.actionScheduleHistoryFragmentToFeedbackSummaryFragmentWithPharmacy(null,
+                any as Pharmacy
+            )
+        findNavController().navigate(action)
     }
 }

@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.e4clinic.ui.fragments.LoginFragment"
-        android:label="LoginFragment" >
+        android:label="LoginFragment">
         <action
             android:id="@+id/action_loginFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
@@ -17,7 +17,7 @@
         android:id="@+id/homeFragment"
         android:name="com.example.e4clinic.ui.fragments.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_clinicsFragment"
             app:destination="@id/clinicsFragment" />
@@ -42,7 +42,7 @@
         android:id="@+id/moreFragment"
         android:name="com.example.e4clinic.ui.fragments.MoreFragment"
         android:label="fragment_more"
-        tools:layout="@layout/fragment_more" >
+        tools:layout="@layout/fragment_more">
         <action
             android:id="@+id/action_moreFragment_to_scheduleHistoryFragment"
             app:destination="@id/scheduleHistoryFragment" />
@@ -51,24 +51,19 @@
         android:id="@+id/clinicsFragment"
         android:name="com.example.e4clinic.ui.fragments.ClinicsFragment"
         android:label="fragment_clinics"
-        tools:layout="@layout/fragment_clinics" >
+        tools:layout="@layout/fragment_clinics">
         <action
             android:id="@+id/action_clinicsFragment_to_clinicsDetailsFragment"
             app:destination="@id/clinicsDetailsFragment" />
         <action
             android:id="@+id/action_clinicsFragment_to_addFeedbackFragment"
             app:destination="@id/addFeedbackFragment" />
-        <!-- <argument
-             android:name="clinic"
-             app:argType="com.example.e4clinic.models.Clinic"
-             android:defaultValue="@null" />-->
     </fragment>
     <fragment
         android:id="@+id/pharmaciesFragment"
         android:name="com.example.e4clinic.ui.fragments.PharmaciesFragment"
         android:label="fragment_pharmacies"
-        tools:layout="@layout/fragment_pharmacies" >
-    </fragment>
+        tools:layout="@layout/fragment_pharmacies" />
     <fragment
         android:id="@+id/videoCallsFragment"
         android:name="com.example.e4clinic.ui.fragments.VideoCallsFragment"
@@ -78,33 +73,48 @@
         android:id="@+id/clinicsDetailsFragment"
         android:name="com.example.e4clinic.ui.fragments.ClinicsDetailsFragment"
         android:label="fragment_clinics_details"
-        tools:layout="@layout/fragment_clinics_details" >
+        tools:layout="@layout/fragment_clinics_details">
         <argument
             android:name="clinic_argument"
+            android:defaultValue="@null"
             app:argType="com.example.e4clinic.models.Clinic"
-            app:nullable="true"
-            android:defaultValue="@null" />
+            app:nullable="true" />
     </fragment>
     <fragment
         android:id="@+id/addFeedbackFragment"
         android:name="com.example.e4clinic.ui.fragments.AddFeedbackFragment"
-        android:label="AddFeedbackFragment" >
+        android:label="AddFeedbackFragment">
         <argument
             android:name="clinic_argument"
+            android:defaultValue="@null"
             app:argType="com.example.e4clinic.models.Clinic"
-            app:nullable="true"
-            android:defaultValue="@null" />
+            app:nullable="true" />
     </fragment>
     <fragment
         android:id="@+id/scheduleHistoryFragment"
         android:name="com.example.e4clinic.ui.fragments.ScheduleHistoryFragment"
-        android:label="ScheduleHistoryFragment" >
+        android:label="ScheduleHistoryFragment">
         <action
-            android:id="@+id/action_scheduleHistoryFragment_to_feedbackSummaryFragment"
+            android:id="@+id/action_scheduleHistoryFragment_to_feedbackSummaryFragmentWithClinic"
+            app:destination="@id/feedbackSummaryFragment" />
+        <action
+            android:id="@+id/action_scheduleHistoryFragment_to_feedbackSummaryFragmentWithPharmacy"
             app:destination="@id/feedbackSummaryFragment" />
     </fragment>
     <fragment
         android:id="@+id/feedbackSummaryFragment"
         android:name="com.example.e4clinic.ui.fragments.FeedbackSummaryFragment"
-        android:label="FeedbackSummaryFragment" />
+        android:label="FeedbackSummaryFragment">
+        <argument
+            android:name="clinic_argument"
+            android:defaultValue="@null"
+            app:argType="com.example.e4clinic.models.Clinic"
+            app:nullable="true" />
+        <argument
+            android:name="pharmacy_argument"
+            android:defaultValue="@null"
+            app:argType="com.example.e4clinic.models.Pharmacy"
+            app:nullable="true" />
+
+    </fragment>
 </navigation>
