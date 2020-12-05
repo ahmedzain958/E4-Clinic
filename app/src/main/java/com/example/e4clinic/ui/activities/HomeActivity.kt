@@ -53,14 +53,23 @@ class HomeActivity : AppCompatActivity() {
                     R.id.addClientFragment -> {
                         setToolbarVisibility(false)
                         tvToolbarTitle.text = getString(R.string.add_new_client)
-                        toolbar.setNavigationIcon(R.drawable.ic_baseline_arrow_back_24);
-                        toolbar.setNavigationOnClickListener {
+                        toolbar.setOnClickListener {
                             onBackPressed()
                         }
+                        group_notification.visibility = View.INVISIBLE
                     }
                     R.id.clinicsFragment, R.id.pharmaciesFragment, R.id.videoCallsFragment -> {
                         setToolbarVisibility(false)
                         tvToolbarTitle.text = getString(R.string.schedule)
+                        toolbar.setOnClickListener {
+                            onBackPressed()
+                        }
+                        group_notification.visibility = View.INVISIBLE
+                    }
+
+                    R.id.newPlanFragment -> {
+                        setToolbarVisibility(false)
+                        tvToolbarTitle.text = getString(R.string.new_plan)
                         toolbar.setOnClickListener {
                             onBackPressed()
                         }

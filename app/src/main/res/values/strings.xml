@@ -53,4 +53,7 @@
     <string name="client_address_branches_addresses">Client Address (Branches Addresses</string>
     <string name="branche_name">Branche Name</string>
     <string name="save">Save</string>
+    <string name="set_new_plan">Set New Plan</string>
+    <string name="branches">Branches</string>
+    <string name="reason_plan">Reason Plan</string>
 </resources>

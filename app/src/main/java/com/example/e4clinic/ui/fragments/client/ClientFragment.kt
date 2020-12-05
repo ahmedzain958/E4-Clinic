@@ -41,11 +41,12 @@ class ClientFragment : BaseFragment<CientViewModel, FragmentClientBinding>() {
         mViewBinding.addNewClientFab.setOnClickListener {
             findNavController().navigate(R.id.action_clientFragment_to_addClientFragment)
         }
-
     }
 
     private fun setupRecyclerView() {
-        adapter = ClientsAdapter()
+        adapter = ClientsAdapter {
+            findNavController().navigate(R.id.action_clientFragment_to_newPlanFragment)
+        }
         mViewBinding.clientsRecyclerView.addItemDecoration(
             DividerItemDecoration(
                 mViewBinding.clientsRecyclerView.context,

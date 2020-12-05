@@ -8,15 +8,19 @@ import com.example.e4clinic.R
 import com.example.e4clinic.models.Client
 import kotlinx.android.synthetic.main.item_client_layout.view.*
 
-class ClientsAdapter : RecyclerView.Adapter<ClientsAdapter.ClientsViewHolder>() {
+class ClientsAdapter(private val onNewPlanClicked: () -> Unit) :
+    RecyclerView.Adapter<ClientsAdapter.ClientsViewHolder>() {
     private val mClientsList = ArrayList<Client>()
 
     class ClientsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(client: Client) {
+        fun bind(client: Client, onNewPlanClicked: () -> Unit) {
             itemView.txt_doctor_name.text = client.clientName
             itemView.locationTxt.text = client.clientCity
             itemView.doctorEmailTxt.text = client.email
             itemView.doctorPhoneTxt.text = client.mobile
+            itemView.cardview_newPlane.setOnClickListener {
+                onNewPlanClicked()
+            }
         }
     }
 
@@ -29,7 +33,7 @@ class ClientsAdapter : RecyclerView.Adapter<ClientsAdapter.ClientsViewHolder>() 
         )
 
     override fun onBindViewHolder(holder: ClientsViewHolder, position: Int) =
-        holder.bind(mClientsList[position])
+        holder.bind(mClientsList[position], onNewPlanClicked)
 
 
     override fun getItemCount(): Int = mClientsList.size

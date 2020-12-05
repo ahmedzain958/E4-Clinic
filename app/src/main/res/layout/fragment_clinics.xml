@@ -213,7 +213,7 @@
                         app:layout_constraintTop_toTopOf="@id/txt_month_year" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-               <!-- <noman.weekcalendar.WeekCalendar
+                <noman.weekcalendar.WeekCalendar
                     android:id="@+id/calender_week_clinic"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
@@ -229,7 +229,7 @@
                     app:todaysDateBgColor="@color/purple_200"
                     app:weekBackgroundColor="@color/white"
                     app:weekTextColor="@color/purple_200"
-                    app:weekTextSize="@dimen/_10sdp" />-->
+                    app:weekTextSize="@dimen/_10sdp" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
 

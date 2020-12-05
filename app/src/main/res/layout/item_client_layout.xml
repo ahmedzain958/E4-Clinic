@@ -138,7 +138,7 @@
             tools:text="002-100 300 5689" />
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardview_feedback"
+            android:id="@+id/cardview_newPlane"
             android:layout_width="@dimen/_75sdp"
             android:layout_height="@dimen/_22sdp"
             android:layout_marginEnd="@dimen/_10sdp"

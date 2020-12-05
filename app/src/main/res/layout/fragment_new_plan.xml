@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".ui.fragments.PharmaciesFragment">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/doctorCard"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_9sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:cardElevation="@dimen/_4sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/white">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardview_circle"
+                        android:layout_width="@dimen/_30sdp"
+                        android:layout_height="@dimen/_30sdp"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        app:cardCornerRadius="@dimen/_50sdp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageView
+                                android:id="@+id/img_doctor"
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_person"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/txt_doctor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:text="@string/Doctor"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintStart_toEndOf="@id/cardview_circle"
+                        app:layout_constraintTop_toTopOf="@id/cardview_circle" />
+
+                    <TextView
+                        android:id="@+id/txt_doctor_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_4sdp"
+                        android:textSize="@dimen/_12sdp"
+                        app:layout_constraintBottom_toBottomOf="@id/txt_doctor"
+                        app:layout_constraintStart_toEndOf="@id/txt_doctor"
+                        app:layout_constraintTop_toTopOf="@id/txt_doctor"
+                        tools:text="@string/Doctor" />
+
+                    <ImageView
+                        android:id="@+id/img_clinic"
+                        android:layout_width="@dimen/_8sdp"
+                        android:layout_height="@dimen/_8sdp"
+                        android:layout_marginTop="@dimen/_2sdp"
+                        android:background="@drawable/pharmacy_logo_blue"
+                        app:layout_constraintStart_toStartOf="@+id/txt_doctor"
+                        app:layout_constraintTop_toBottomOf="@id/txt_doctor" />
+
+                    <TextView
+                        android:id="@+id/locationTxt"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:lineSpacingExtra="4sp"
+                        android:text="El-Shouroq"
+                        android:textColor="@color/purple_200"
+                        android:textSize="@dimen/_7sdp"
+                        android:textStyle="normal"
+                        app:layout_constraintBottom_toBottomOf="@id/img_clinic"
+                        app:layout_constraintStart_toEndOf="@id/img_clinic"
+                        app:layout_constraintTop_toTopOf="@id/img_clinic" />
+
+                    <TextView
+                        android:id="@+id/doctorEmailTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="4sp"
+                        android:text="ahmed karim@gmail.com"
+                        android:textColor="@color/textColor"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="@id/img_clinic"
+                        app:layout_constraintTop_toBottomOf="@id/locationTxt"
+                        tools:text="ahmed karim@gmail.com" />
+
+                    <TextView
+                        android:id="@+id/doctorPhoneTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="4sp"
+                        android:text="002-100 300 5689"
+                        android:textColor="@color/textColor"
+                        android:textSize="12sp"
+                        android:textStyle="normal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/img_clinic"
+                        app:layout_constraintTop_toBottomOf="@id/doctorEmailTxt"
+                        app:layout_constraintVertical_bias="0.0"
+                        tools:text="002-100 300 5689" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview_new_plane"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:cardElevation="@dimen/_5sdp"
+                app:contentPadding="@dimen/_20sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/doctorCard">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/header_label_new_plane"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="5sp"
+                        android:text="@string/set_new_plan"
+                        android:textColor="@color/purple_200"
+                        android:textSize="15sp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/txt_branch_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_6sdp"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:text="@string/branches"
+                        android:textColor="@color/purple_200"
+                        android:textSize="@dimen/_9sdp"
+                        app:layout_constraintStart_toStartOf="@id/header_label_new_plane"
+                        app:layout_constraintTop_toBottomOf="@id/header_label_new_plane" />
+
+                    <EditText
+                        android:id="@+id/branchNameEditText"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_25sdp"
+                        android:background="@drawable/edt_rounded_bg"
+                        android:drawableEnd="@drawable/ic_dropdown"
+                        android:gravity="center_vertical"
+                        android:hint="@string/branche_name"
+                        android:paddingHorizontal="@dimen/_7sdp"
+                        android:text="Roshdy (Nasr City)"
+                        android:textColor="@color/purple_200"
+                        android:textColorHint="@color/colorMediumGrey"
+                        android:textSize="@dimen/_8sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txt_branch_name" />
+
+
+                    <include
+                        android:id="@+id/branch1"
+                        layout="@layout/item_client_branch_adress_layout"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/branchNameEditText" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview_calender"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:cardElevation="@dimen/_5sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardview_new_plane">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/_18sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:layout_marginBottom="@dimen/_10sdp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraint_calender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/txt_month_year"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/purple_200"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:text="August 2020" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/_8sdp"
+                            android:src="@drawable/ic_dropdown"
+                            app:layout_constraintBottom_toBottomOf="@id/txt_month_year"
+                            app:layout_constraintStart_toEndOf="@id/txt_month_year"
+                            app:layout_constraintTop_toTopOf="@id/txt_month_year" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <noman.weekcalendar.WeekCalendar
+                        android:id="@+id/calender_wek"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:background="@color/white"
+                        app:dayNameLength="threeLetters"
+                        app:daysBackgroundColor="@color/white"
+                        app:daysTextColor="@color/colorMediumGrey"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/constraint_calender"
+                        app:numOfPages="1000"
+                        app:selectedBgColor="@color/purple_200"
+                        app:todaysDateBgColor="@color/purple_200"
+                        app:weekBackgroundColor="@color/white"
+                        app:weekTextColor="@color/purple_200"
+                        app:weekTextSize="@dimen/_10sdp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+
+            <com.google.android.flexbox.FlexboxLayout
+                android:id="@+id/timesChipGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                app:flexWrap="wrap"
+                app:justifyContent="space_between"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardview_calender">
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:elevation="@dimen/_2sdp"
+                    android:text="09:00 AM"
+                    android:textColor="@color/textColor"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipCornerRadius="@dimen/_12sdp" />
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:elevation="@dimen/_2sdp"
+                    android:text="09:00 AM"
+                    android:textColor="@color/textColor"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipCornerRadius="@dimen/_12sdp" />
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:elevation="@dimen/_2sdp"
+                    android:text="09:00 AM"
+                    android:textColor="@color/textColor"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipCornerRadius="@dimen/_12sdp" />
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:elevation="@dimen/_2sdp"
+                    android:text="09:00 AM"
+                    android:textColor="@color/white"
+                    app:chipBackgroundColor="@color/colorAccent"
+                    app:chipCornerRadius="@dimen/_12sdp" />
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:elevation="@dimen/_2sdp"
+                    android:text="09:00 AM"
+                    android:textColor="@color/white"
+                    app:chipBackgroundColor="@color/colorAccent"
+                    app:chipCornerRadius="@dimen/_12sdp" />
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:elevation="@dimen/_2sdp"
+                    android:text="09:00 AM"
+                    android:textColor="@color/textColor"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipCornerRadius="@dimen/_12sdp" />
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:elevation="@dimen/_2sdp"
+                    android:text="09:00 AM"
+                    android:textColor="@color/white"
+                    app:chipBackgroundColor="@color/purple_200"
+                    app:chipCornerRadius="@dimen/_12sdp" />
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:elevation="@dimen/_2sdp"
+                    android:text="09:00 AM"
+                    android:textColor="@color/textColor"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipCornerRadius="@dimen/_12sdp" />
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:elevation="@dimen/_2sdp"
+                    android:text="09:00 AM"
+                    android:textColor="@color/textColor"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipCornerRadius="@dimen/_12sdp" />
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:elevation="@dimen/_2sdp"
+                    android:text="09:00 AM"
+                    android:textColor="@color/white"
+                    app:chipBackgroundColor="@color/colorAccent"
+                    app:chipCornerRadius="@dimen/_12sdp" />
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:elevation="@dimen/_2sdp"
+                    android:text="09:00 AM"
+                    android:textColor="@color/textColor"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipCornerRadius="@dimen/_12sdp" />
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:elevation="@dimen/_2sdp"
+                    android:text="09:00 AM"
+                    android:textColor="@color/textColor"
+                    app:chipBackgroundColor="@color/white"
+                    app:chipCornerRadius="@dimen/_12sdp" />
+
+            </com.google.android.flexbox.FlexboxLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardview_reson_plan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:cardElevation="@dimen/_5sdp"
+                app:contentPadding="@dimen/_20sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/timesChipGroup">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/header_label_reason_plane"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:lineSpacingExtra="5sp"
+                        android:text="@string/reason_plan"
+                        android:textColor="@color/purple_200"
+                        android:textSize="15sp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <EditText
+                        android:id="@+id/reasonPlanEditText"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_65sdp"
+                        android:background="@drawable/edt_rounded_bg"
+                        android:gravity="start"
+                        android:hint="@string/reason_plan"
+                        android:inputType="textMultiLine"
+                        android:lines="3"
+                        android:padding="@dimen/_5sdp"
+                        android:paddingHorizontal="@dimen/_7sdp"
+                        android:textColorHint="@color/colorMediumGrey"
+                        android:textSize="@dimen/_8sdp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/header_label_reason_plane" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btn_save"
+                android:layout_width="@dimen/_130sdp"
+                android:layout_height="@dimen/_34sdp"
+                android:layout_marginTop="@dimen/_24sdp"
+                android:layout_marginBottom="@dimen/_35sdp"
+                android:background="@drawable/btn_rounded_bg"
+                android:gravity="center"
+                android:text="@string/save"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_14sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cardview_reson_plan" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

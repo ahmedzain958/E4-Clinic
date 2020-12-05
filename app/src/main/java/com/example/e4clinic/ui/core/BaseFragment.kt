@@ -32,7 +32,12 @@ abstract class BaseFragment<V : ViewModel, T : ViewDataBinding> : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        mViewDataBinding = DataBindingUtil.inflate(inflater, getLayoutId(), container, false)
+        mViewDataBinding = DataBindingUtil.inflate(
+            LayoutInflater.from(requireActivity()),
+            getLayoutId(),
+            container,
+            false
+        )
         mViewDataBinding.lifecycleOwner = viewLifecycleOwner
         mRootView = mViewDataBinding.root
         return mRootView
