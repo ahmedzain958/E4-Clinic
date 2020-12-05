@@ -42,7 +42,11 @@
         android:id="@+id/moreFragment"
         android:name="com.example.e4clinic.ui.fragments.MoreFragment"
         android:label="fragment_more"
-        tools:layout="@layout/fragment_more" />
+        tools:layout="@layout/fragment_more" >
+        <action
+            android:id="@+id/action_moreFragment_to_scheduleHistoryFragment"
+            app:destination="@id/scheduleHistoryFragment" />
+    </fragment>
     <fragment
         android:id="@+id/clinicsFragment"
         android:name="com.example.e4clinic.ui.fragments.ClinicsFragment"
@@ -91,4 +95,8 @@
             app:nullable="true"
             android:defaultValue="@null" />
     </fragment>
+    <fragment
+        android:id="@+id/scheduleHistoryFragment"
+        android:name="com.example.e4clinic.ui.fragments.ScheduleHistoryFragment"
+        android:label="ScheduleHistoryFragment" />
 </navigation>

@@ -6,6 +6,7 @@
     android:layout_height="@dimen/_100sdp"
     android:layout_marginTop="@dimen/_6sdp"
     android:layout_marginEnd="@dimen/_6sdp"
+    android:layout_marginBottom="@dimen/_8sdp"
     app:cardBackgroundColor="@color/purple_200"
     app:cardCornerRadius="@dimen/_8sdp"
     app:cardElevation="@dimen/_4sdp">

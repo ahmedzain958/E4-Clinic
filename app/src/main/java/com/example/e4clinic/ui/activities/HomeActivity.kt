@@ -66,6 +66,14 @@ class HomeActivity : AppCompatActivity() {
                         }
                         group_notification.visibility = View.INVISIBLE
                     }
+                    R.id.scheduleHistoryFragment-> {
+                        setToolbarVisibility(false)
+                        tvToolbarTitle.text = getString(R.string.schedule_history)
+                        toolbar.setOnClickListener {
+                            onBackPressed()
+                        }
+                        group_notification.visibility = View.INVISIBLE
+                    }
                     else -> {
                         setToolbarVisibility(false)
                         tvToolbarTitle.text = getString(R.string.schedule_details)
