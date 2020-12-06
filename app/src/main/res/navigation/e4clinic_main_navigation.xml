@@ -102,10 +102,7 @@
         android:name="com.example.e4clinic.ui.fragments.ScheduleHistoryFragment"
         android:label="ScheduleHistoryFragment">
         <action
-            android:id="@+id/action_scheduleHistoryFragment_to_feedbackSummaryFragmentWithClinic"
-            app:destination="@id/feedbackSummaryFragment" />
-        <action
-            android:id="@+id/action_scheduleHistoryFragment_to_feedbackSummaryFragmentWithPharmacy"
+            android:id="@+id/action_scheduleHistoryFragment_to_feedbackSummaryFragment"
             app:destination="@id/feedbackSummaryFragment" />
     </fragment>
     <fragment

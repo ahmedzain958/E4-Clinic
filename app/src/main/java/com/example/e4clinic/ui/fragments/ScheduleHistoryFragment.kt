@@ -72,11 +72,12 @@ class ScheduleHistoryFragment :
     override fun onClickedFeedback(any: Any) {
 
         val action = if (any is Clinic)
-            ScheduleHistoryFragmentDirections.actionScheduleHistoryFragmentToFeedbackSummaryFragmentWithClinic(
+            ScheduleHistoryFragmentDirections.actionScheduleHistoryFragmentToFeedbackSummaryFragment(
                 any as Clinic
             )
         else
-            ScheduleHistoryFragmentDirections.actionScheduleHistoryFragmentToFeedbackSummaryFragmentWithPharmacy(null,
+            ScheduleHistoryFragmentDirections.actionScheduleHistoryFragmentToFeedbackSummaryFragment(
+                null,
                 any as Pharmacy
             )
         findNavController().navigate(action)
